@@ -239,7 +239,7 @@
     }
 
     .qj-spot-btn {
-      background-color: var(--paper);
+      background-color: var(--soft-sand);
       color: var(--ink);
       border: 2px solid var(--ink);
       border-radius: 999px;
@@ -761,6 +761,7 @@
       border: 2.5px solid var(--ink);
       border-radius: var(--radius-md);
       padding: 14px;
+      touch-action: manipulation;
     }
 
     .math-display-wrap {
@@ -800,6 +801,7 @@
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 8px;
+      touch-action: manipulation;
     }
 
     .math-key {
@@ -814,6 +816,10 @@
       font-weight: 700;
       cursor: pointer;
       box-shadow: 0 2px 0 var(--ink);
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
       transition: transform 0.15s ease, background-color 0.15s ease;
     }
 
@@ -1275,7 +1281,7 @@
 
       .translate-left-group {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .translate-actions .btn-link {
@@ -1550,8 +1556,9 @@
         <textarea id="customTranslateText" class="custom-textarea" placeholder="在此輸入想翻譯的句子，點選下方「Google 翻譯」會直接帶入文字並另開新分頁..."></textarea>
         <div class="translate-actions">
           <div class="translate-left-group">
-            <button type="button" id="copyCustomBtn" class="btn-action soft">複製文字</button>
-            <button type="button" id="clearCustomBtn" class="btn-action coral">清除文字</button>
+            <button type="button" id="copyCustomBtn" class="btn-action soft">複製</button>
+            <button type="button" id="pasteCustomBtn" class="btn-action sky">貼上</button>
+            <button type="button" id="clearCustomBtn" class="btn-action coral">清除</button>
           </div>
           <a id="openGoogleTranslate" class="btn-link map" href="https://translate.google.com/?sl=auto&tl=ja&op=translate" target="_blank" rel="noopener noreferrer">Google 翻譯</a>
         </div>
@@ -2234,95 +2241,112 @@
       return b;
     }
 
-    document.querySelectorAll(".math-key").forEach(key => {
-      key.addEventListener("click", () => {
-        const act = key.dataset.math;
+    function handleMathKeyAction(act) {
+      if (act === "clear") {
+        mCurrent = "0";
+        mPrev = null;
+        mOp = null;
+        mResetNext = false;
+        renderMathScreen();
+        return;
+      }
 
-        if (act === "clear") {
+      if (act === "back") {
+        if (mResetNext || mCurrent.length <= 1 || mCurrent === "錯誤") {
           mCurrent = "0";
-          mPrev = null;
-          mOp = null;
-          mResetNext = false;
-          renderMathScreen();
-          return;
-        }
-
-        if (act === "back") {
-          if (mResetNext || mCurrent.length <= 1 || mCurrent === "錯誤") {
-            mCurrent = "0";
-            mResetNext = false;
-          } else {
-            mCurrent = mCurrent.slice(0, -1);
-          }
-          renderMathScreen();
-          return;
-        }
-
-        if (act === "pct") {
-          const cur = parseFloat(mCurrent);
-          if (Number.isNaN(cur)) return;
-          if (mPrev !== null && (mOp === "+" || mOp === "-")) {
-            mCurrent = formatMathNum((mPrev * cur) / 100);
-          } else {
-            mCurrent = formatMathNum(cur / 100);
-          }
-          mResetNext = false;
-          renderMathScreen();
-          return;
-        }
-
-        if (["+", "-", "*", "/"].includes(act)) {
-          const cur = parseFloat(mCurrent);
-          if (!Number.isNaN(cur)) {
-            if (mPrev !== null && mOp && !mResetNext) {
-              const res = computeBinary(mPrev, cur, mOp);
-              mPrev = Number.isFinite(res) ? res : null;
-              mCurrent = formatMathNum(res);
-            } else {
-              mPrev = cur;
-            }
-          }
-          mOp = act;
-          mResetNext = true;
-          renderMathScreen();
-          return;
-        }
-
-        if (act === "=") {
-          if (mPrev === null || !mOp) return;
-          const cur = parseFloat(mCurrent);
-          const res = computeBinary(mPrev, cur, mOp);
-          mathExprEl.textContent = `${addCommasToNumericString(formatMathNum(mPrev))} ${OP_SYMBOLS[mOp]} ${addCommasToNumericString(formatMathNum(cur))} =`;
-          mCurrent = formatMathNum(res);
-          mPrev = null;
-          mOp = null;
-          mResetNext = true;
-          updateFxPreview();
-          return;
-        }
-
-        if (mResetNext || mCurrent === "錯誤") {
-          if (act === ".") mCurrent = "0.";
-          else if (act === "00") mCurrent = "0";
-          else mCurrent = act;
           mResetNext = false;
         } else {
-          if (act === ".") {
-            if (mCurrent.includes(".")) return;
-            mCurrent += ".";
-          } else if (act === "00") {
-            if (mCurrent !== "0") mCurrent += "00";
-          } else {
-            mCurrent = (mCurrent === "0") ? act : mCurrent + act;
-          }
+          mCurrent = mCurrent.slice(0, -1);
         }
         renderMathScreen();
+        return;
+      }
+
+      if (act === "pct") {
+        const cur = parseFloat(mCurrent);
+        if (Number.isNaN(cur)) return;
+        if (mPrev !== null && (mOp === "+" || mOp === "-")) {
+          mCurrent = formatMathNum((mPrev * cur) / 100);
+        } else {
+          mCurrent = formatMathNum(cur / 100);
+        }
+        mResetNext = false;
+        renderMathScreen();
+        return;
+      }
+
+      if (["+", "-", "*", "/"].includes(act)) {
+        const cur = parseFloat(mCurrent);
+        if (!Number.isNaN(cur)) {
+          if (mPrev !== null && mOp && !mResetNext) {
+            const res = computeBinary(mPrev, cur, mOp);
+            mPrev = Number.isFinite(res) ? res : null;
+            mCurrent = formatMathNum(res);
+          } else {
+            mPrev = cur;
+          }
+        }
+        mOp = act;
+        mResetNext = true;
+        renderMathScreen();
+        return;
+      }
+
+      if (act === "=") {
+        if (mPrev === null || !mOp) return;
+        const cur = parseFloat(mCurrent);
+        const res = computeBinary(mPrev, cur, mOp);
+        mathExprEl.textContent = `${addCommasToNumericString(formatMathNum(mPrev))} ${OP_SYMBOLS[mOp]} ${addCommasToNumericString(formatMathNum(cur))} =`;
+        mCurrent = formatMathNum(res);
+        mPrev = null;
+        mOp = null;
+        mResetNext = true;
+        updateFxPreview();
+        return;
+      }
+
+      if (mResetNext || mCurrent === "錯誤") {
+        if (act === ".") mCurrent = "0.";
+        else if (act === "00") mCurrent = "0";
+        else mCurrent = act;
+        mResetNext = false;
+      } else {
+        if (act === ".") {
+          if (mCurrent.includes(".")) return;
+          mCurrent += ".";
+        } else if (act === "00") {
+          if (mCurrent !== "0") mCurrent += "00";
+        } else {
+          mCurrent = (mCurrent === "0") ? act : mCurrent + act;
+        }
+      }
+      renderMathScreen();
+    }
+
+    document.querySelectorAll(".math-key").forEach(key => {
+      let lastTapTime = 0;
+
+      key.addEventListener("dblclick", (e) => {
+        e.preventDefault();
+      });
+
+      key.addEventListener("pointerdown", (e) => {
+        const now = Date.now();
+        if (now - lastTapTime < 320) {
+          e.preventDefault();
+        }
+        lastTapTime = now;
+      });
+
+      key.addEventListener("click", (e) => {
+        e.preventDefault();
+        handleMathKeyAction(key.dataset.math);
       });
     });
 
     renderMathScreen();
 
-    // 5. 快速翻譯（僅保留 Google 翻譯）
+    // 5. 快速翻譯（複製、貼上、清除 + Google 翻譯）
     const customTranslateText = document.getElementById("customTranslateText");
     const openGoogleTranslate = document.getElementById("openGoogleTranslate");
 
@@ -2334,6 +2358,7 @@
     }
 
     customTranslateText.addEventListener("input", updateTranslateLinks);
+
     document.getElementById("copyCustomBtn").addEventListener("click", () => {
       if (!customTranslateText.value.trim()) {
         showToast("請先輸入想複製的文字");
@@ -2341,6 +2366,24 @@
       }
       copyText(customTranslateText.value.trim());
     });
+
+    document.getElementById("pasteCustomBtn").addEventListener("click", async () => {
+      try {
+        if (navigator.clipboard && navigator.clipboard.readText) {
+          const clipText = await navigator.clipboard.readText();
+          if (clipText) {
+            customTranslateText.value = clipText;
+            updateTranslateLinks();
+            customTranslateText.focus();
+            showToast("已貼上剪貼簿文字");
+            return;
+          }
+        }
+      } catch (_) {}
+      customTranslateText.focus();
+      showToast("請在輸入框長按或使用 Ctrl/Cmd+V 貼上文字");
+    });
+
     document.getElementById("clearCustomBtn").addEventListener("click", () => {
       customTranslateText.value = "";
       updateTranslateLinks();
