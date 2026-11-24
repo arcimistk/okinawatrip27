@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2027 沖繩繪本風自駕行程｜2027/01/01 - 2027/01/05</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #FFFCF6;
+      --ink: #3E3A39;
+      --coral: #F2A497;
+      --yellow: #F6D27A;
+      --sky: #A8D3E6;
+      --green: #B9DAA5;
+      --card-white: #FFFDF9;
+      --soft-sand: #F7EFE0;
+      --border-w: 3px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --shadow-hard: 0 5px 0 var(--ink);
+      --shadow-sm: 0 3px 0 var(--ink);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 0 84px;
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: "Huninn", "Noto Sans TC", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* 頂端固定選單 */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--paper);
+      border-bottom: var(--border-w) solid var(--ink);
+      padding: 10px 14px;
+    }
+
+    .header-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .brand-mini {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      white-space: nowrap;
+    }
+
+    .brand-dot {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--yellow);
+      border: 2.5px solid var(--ink);
+      font-size: 0.9rem;
+    }
+
+    .nav-scroll {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+      flex: 1 1 auto;
+      min-width: 180px;
+    }
+
+    .nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--ink);
+      background-color: var(--card-white);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      background-color: var(--yellow);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .motion-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--soft-sand);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      color: var(--ink);
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .motion-toggle[aria-pressed="true"] {
+      background-color: var(--green);
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 18px 14px 0;
+    }
+
+    .section-block {
+      margin-top: 28px;
+      scroll-margin-top: 76px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.35rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--yellow);
+      border: var(--border-w) solid var(--ink);
+      border-radius: 999px;
+      padding: 5px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-title.sky { background-color: var(--sky); }
+    .section-title.coral { background-color: var(--coral); }
+    .section-title.green { background-color: var(--green); }
+
+    .card {
+      background-color: var(--card-white);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-hard);
+    }
+
+    /* 首頁卡片 */
+    .hero-card {
+      background-color: var(--paper);
+      padding: 20px 18px 22px;
+      text-align: center;
+    }
+
+    .hero-svg-wrap {
+      width: 100%;
+      max-width: 660px;
+      margin: 0 auto 14px;
+      background-color: var(--sky);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-svg-wrap svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background-color: var(--coral);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 3px 14px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 0 var(--ink);
+    }
+
+    .hero-title {
+      margin: 4px 0 6px;
+      font-size: clamp(1.6rem, 4.8vw, 2.25rem);
+      line-height: 1.25;
+    }
+
+    .hero-dates {
+      margin: 0 0 16px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .countdown-box {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(60px, 1fr));
+      gap: 8px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .countdown-item {
+      background-color: var(--card-white);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 8px 6px;
+      box-shadow: 0 3px 0 var(--ink);
+    }
+
+    .countdown-item:nth-child(1) { background-color: var(--yellow); }
+    .countdown-item:nth-child(2) { background-color: var(--sky); }
+    .countdown-item:nth-child(3) { background-color: var(--green); }
+    .countdown-item:nth-child(4) { background-color: var(--coral); }
+
+    .countdown-num {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .countdown-label {
+      font-size: 0.8rem;
+    }
+
+    .countdown-status {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    /* 航班與租車網格 */
+    .flight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .flight-card {
+      position: relative;
+      background-color: var(--card-white);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flight-tag {
+      display: inline-block;
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 2px 12px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+
+    .flight-tag.out { background-color: var(--yellow); }
+    .flight-tag.back { background-color: var(--coral); }
+    .flight-tag.car { background-color: var(--green); }
+
+    .flight-route {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 6px 0 10px;
+      font-size: 1.12rem;
+      font-weight: 700;
+    }
+
+    .flight-meta {
+      margin: 4px 0;
+      font-size: 0.92rem;
+    }
+
+    /* 每日行程日期切換 */
+    .day-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+      scrollbar-width: none;
+    }
+
+    .day-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .day-tab {
+      flex: 1 0 auto;
+      min-width: 112px;
+      background-color: var(--card-white);
+      color: var(--ink);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 9px 12px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .day-tab:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .day-tab.active {
+      background-color: var(--yellow);
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 5px 0 var(--ink);
+    }
+
+    .day-tab .tab-sub {
+      display: block;
+      font-size: 0.78rem;
+      opacity: 0.85;
+    }
+
+    /* 彈跳動畫 */
+    @keyframes dayBounceIn {
+      0% {
+        opacity: 0;
+        transform: translateY(14px) scale(0.97);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.01);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .timeline-panel {
+      animation: dayBounceIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .day-banner {
+      background-color: var(--sky);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .day-banner h3 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    /* 時間軸 */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      bottom: 10px;
+      width: 4px;
+      background-color: var(--ink);
+      border-radius: 999px;
+    }
+
+    .stop-card {
+      position: relative;
+      background-color: var(--card-white);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 15px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stop-card::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 20px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--coral);
+      border: 3px solid var(--ink);
+    }
+
+    .stop-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .stop-title {
+      margin: 4px 0 6px;
+      font-size: 1.12rem;
+      line-height: 1.35;
+    }
+
+    .stop-desc {
+      margin: 0 0 12px;
+      font-size: 0.94rem;
+      color: var(--ink);
+    }
+
+    .stop-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 前一天 / 後一天按鈕靠右對齊 */
+    .day-step-nav {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      color: var(--ink);
+      background-color: var(--soft-sand);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      box-shadow: 0 3px 0 var(--ink);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .btn-link.map { background-color: var(--sky); }
+    .btn-link.web { background-color: var(--yellow); }
+    .btn-link.park { background-color: var(--green); }
+
+    .btn-link:hover,
+    .btn-link:focus-visible {
+      transform: translateY(-2px);
+      background-color: var(--coral);
+      outline: none;
+    }
+
+    /* 住宿卡片 */
+    .hotel-box {
+      background-color: var(--soft-sand);
+      border: 2.5px dashed var(--ink);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin-top: 12px;
+      font-size: 0.92rem;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background-color: var(--yellow);
+      color: var(--ink);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      box-shadow: 0 3px 0 var(--ink);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .btn-action:hover,
+    .btn-action:focus-visible {
+      transform: translateY(-2px);
+      background-color: var(--coral);
+      outline: none;
+    }
+
+    .btn-action.sky { background-color: var(--sky); }
+    .btn-action.green { background-color: var(--green); }
+    .btn-action.coral { background-color: var(--coral); }
+    .btn-action.soft { background-color: var(--soft-sand); }
+
+    /* 匯率與計算機上方設定列 */
+    .rate-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background-color: var(--soft-sand);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      font-size: 0.9rem;
+    }
+
+    .rate-input-inline {
+      width: 105px;
+      background-color: var(--card-white);
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .dir-toggle-group {
+      display: inline-flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .dir-btn {
+      background-color: var(--card-white);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .dir-btn.active {
+      background-color: var(--yellow);
+      font-weight: 700;
+    }
+
+    /* 加減乘除百分比計算機 */
+    .math-calc-box {
+      margin-top: 12px;
+      background-color: var(--paper);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 14px;
+    }
+
+    .math-display-wrap {
+      background-color: var(--card-white);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+
+    .math-expr {
+      font-size: 0.85rem;
+      opacity: 0.78;
+      min-height: 20px;
+    }
+
+    .math-value {
+      font-size: 1.55rem;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .math-fx-line {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1.5px dashed var(--ink);
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .math-keypad {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .math-key {
+      background-color: var(--soft-sand);
+      color: var(--ink);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 9px 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .math-key:hover {
+      background-color: var(--yellow);
+      transform: translateY(-2px);
+    }
+
+    .math-key.op { background-color: var(--sky); }
+    .math-key.fn { background-color: var(--coral); }
+    .math-key.eq { background-color: var(--green); }
+
+    /* 翻譯小幫手 */
+    .btn-mini {
+      background-color: var(--card-white);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 10px;
+      padding: 4px 10px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-mini:hover {
+      background-color: var(--yellow);
+      transform: translateY(-1px);
+    }
+
+    .custom-textarea {
+      width: 100%;
+      min-height: 130px;
+      background-color: var(--paper);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      color: var(--ink);
+      resize: vertical;
+      margin: 8px 0 12px;
+    }
+
+    .custom-textarea:focus {
+      outline: none;
+      background-color: #FFF6D6;
+    }
+
+    .translate-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .translate-left-group {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 清單頁籤與項目 */
+    .list-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .list-tab {
+      background-color: var(--card-white);
+      color: var(--ink);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .list-tab.active {
+      background-color: var(--coral);
+      transform: translateY(-2px);
+    }
+
+    .progress-bar-wrap {
+      background-color: var(--soft-sand);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      height: 18px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--green);
+      transition: width 0.3s ease;
+    }
+
+    .add-item-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .add-item-input {
+      flex: 1;
+      background-color: var(--paper);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .check-items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background-color: var(--paper);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+    }
+
+    .check-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      flex: 1;
+      font-size: 0.95rem;
+    }
+
+    .check-label input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--ink);
+      cursor: pointer;
+    }
+
+    .check-item.done .check-text {
+      text-decoration: line-through;
+      opacity: 0.55;
+    }
+
+    .del-btn {
+      background: transparent;
+      border: 1.5px solid var(--ink);
+      border-radius: 8px;
+      padding: 2px 8px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .del-btn:hover {
+      background-color: var(--coral);
+    }
+
+    /* 右下角回到最上方按鈕 */
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 150;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--yellow);
+      color: var(--ink);
+      border: var(--border-w) solid var(--ink);
+      box-shadow: var(--shadow-sm);
+      font-family: inherit;
+      font-size: 1.35rem;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .back-to-top:hover,
+    .back-to-top:focus-visible {
+      background-color: var(--coral);
+      transform: translateY(-4px) scale(1.06);
+      outline: none;
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 300;
+      background-color: var(--ink);
+      color: var(--paper);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .toast-msg.show {
+      opacity: 1;
+    }
+
+    /* 繪本 SVG 輕微動態 */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes cloudDrift {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(7px); }
+    }
+
+    @keyframes carBump {
+      0%, 100% { transform: translate(0px, 0px); }
+      50% { transform: translate(5px, -2px); }
+    }
+
+    .svg-cloud {
+      animation: cloudDrift 5s ease-in-out infinite;
+    }
+
+    .svg-float {
+      animation: floatSlow 3.6s ease-in-out infinite;
+    }
+
+    .svg-car {
+      animation: carBump 2.4s ease-in-out infinite;
+    }
+
+    /* 減少動態效果（系統偏好 或 手動開關） */
+    body.reduced-motion *,
+    body.reduced-motion *::before,
+    body.reduced-motion *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *:not(.allow-motion),
+      *::before:not(.allow-motion),
+      *::after:not(.allow-motion) {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 頂端固定選單 -->
+  <header class="sticky-header">
+    <div class="header-inner">
+      <div class="brand-mini">
+        <span class="brand-dot" aria-hidden="true">🌺</span>
+        <span>2027 沖繩自駕</span>
+      </div>
+      <nav class="nav-scroll" aria-label="主要區塊導覽">
+        <a class="nav-link" href="#top">首頁</a>
+        <a class="nav-link" href="#flight-car">航班/租車</a>
+        <a class="nav-link" href="#itinerary">每日行程</a>
+        <a class="nav-link" href="#hotel">住宿</a>
+        <a class="nav-link" href="#converter">匯率計算機</a>
+        <a class="nav-link" href="#translator">快速翻譯</a>
+        <a class="nav-link" href="#checklists">準備清單</a>
+      </nav>
+      <button type="button" id="motionToggleBtn" class="motion-toggle" aria-pressed="false">
+        <span>✨ 減少動態</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+    <!-- 首頁插圖＋標題＋出發倒數 -->
+    <section class="card hero-card">
+      <div class="hero-svg-wrap">
+        <svg viewBox="0 0 720 270" role="img" aria-label="沖繩日系繪本插圖：藍天大海、首里城守禮門意象、跨海大橋、Q版鯨鯊與自駕小車">
+          <rect x="0" y="0" width="720" height="168" fill="#A8D3E6" />
+          <circle cx="615" cy="54" r="28" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" />
+
+          <g class="svg-cloud">
+            <path d="M90 56 Q96 36 118 38 Q132 24 154 34 Q174 36 178 56 Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <path d="M440 44 Q446 28 464 30 Q476 18 494 28 Q510 30 514 44 Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+          </g>
+
+          <path d="M45 146 L115 92 L185 146 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+          <rect x="215" y="102" width="110" height="44" fill="#F2A497" stroke="#3E3A39" stroke-width="3" />
+          <path d="M202 102 L270 74 L338 102 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+          <rect x="255" y="118" width="30" height="28" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
+
+          <rect x="360" y="124" width="295" height="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
+          <line x1="415" y1="100" x2="415" y2="146" stroke="#3E3A39" stroke-width="3" />
+          <line x1="565" y1="100" x2="565" y2="146" stroke="#3E3A39" stroke-width="3" />
+          <path d="M360 124 Q415 98 470 124" fill="none" stroke="#3E3A39" stroke-width="2.5" />
+          <path d="M510 124 Q565 98 620 124" fill="none" stroke="#3E3A39" stroke-width="2.5" />
+
+          <rect x="0" y="144" width="720" height="82" fill="#78BBD9" stroke="#3E3A39" stroke-width="3" />
+          <path d="M25 166 Q45 158 65 166 T105 166" fill="none" stroke="#FFFCF6" stroke-width="3" stroke-linecap="round" />
+          <path d="M560 174 Q580 166 600 174 T640 174" fill="none" stroke="#FFFCF6" stroke-width="3" stroke-linecap="round" />
+
+          <g class="svg-float">
+            <path d="M150 166 L142 152 L162 165 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <path d="M164 192 L154 206 L176 194 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <path d="M104 182 C112 164, 152 160, 184 166 C202 169, 212 176, 212 183 C212 190, 200 197, 178 197 C148 197, 116 192, 104 182 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <path d="M116 186 C138 186, 178 185, 209 184 C206 191, 194 195, 176 195 C148 195, 126 192, 116 186 Z" fill="#FFFCF6" />
+            <path d="M106 182 L84 166 L91 182 L84 196 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <circle cx="194" cy="177" r="3" fill="#3E3A39" />
+            <circle cx="195" cy="176" r="1" fill="#FFFCF6" />
+            <circle cx="187" cy="182" r="3.5" fill="#F2A497" />
+            <path d="M198 183 Q204 186 209 182" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round" />
+            <circle cx="144" cy="173" r="2.2" fill="#FFFCF6" />
+            <circle cx="156" cy="172" r="2.2" fill="#FFFCF6" />
+            <circle cx="168" cy="173" r="2.2" fill="#FFFCF6" />
+            <circle cx="150" cy="179" r="2" fill="#FFFCF6" />
+            <circle cx="162" cy="179" r="2" fill="#FFFCF6" />
+          </g>
+
+          <rect x="0" y="218" width="720" height="52" fill="#F7EFE0" stroke="#3E3A39" stroke-width="3" />
+          <line x1="20" y1="244" x2="700" y2="244" stroke="#3E3A39" stroke-width="3" stroke-dasharray="16 14" />
+
+          <g class="svg-car">
+            <path d="M475 234 L486 212 L538 212 L550 234 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <rect x="462" y="228" width="98" height="20" rx="8" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" />
+            <rect x="492" y="216" width="18" height="12" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" />
+            <rect x="515" y="216" width="20" height="12" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" />
+            <circle cx="486" cy="248" r="10" fill="#3E3A39" stroke="#FFFCF6" stroke-width="2.5" />
+            <circle cx="538" cy="248" r="10" fill="#3E3A39" stroke="#FFFCF6" stroke-width="2.5" />
+          </g>
+        </svg>
+      </div>
+
+      <span class="hero-badge">🚗 沖繩 5 天 4 夜自駕繪本手帳</span>
+      <h1 class="hero-title">2027 沖繩新年自駕之旅</h1>
+      <p class="hero-dates">2027/01/01（五）– 2027/01/05（二）｜星宇航空 JX870 / JX871・OTS 租車</p>
+
+      <div class="countdown-box" id="countdownBox" aria-live="polite">
+        <div class="countdown-item">
+          <span class="countdown-num" id="cdDays">--</span>
+          <span class="countdown-label">天</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cdHours">--</span>
+          <span class="countdown-label">小時</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cdMins">--</span>
+          <span class="countdown-label">分鐘</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cdSecs">--</span>
+          <span class="countdown-label">秒</span>
+        </div>
+      </div>
+      <div class="countdown-status" id="countdownStatus">出發基準：2027/01/01 11:40（JX870）</div>
+    </section>
+
+    <!-- 航班與租車卡片 -->
+    <section class="section-block" id="flight-car">
+      <div class="section-header">
+        <h2 class="section-title sky">✈️ 航班與租車資訊</h2>
+      </div>
+      <div class="flight-grid">
+        <article class="flight-card">
+          <span class="flight-tag out">去程航班・2027/01/01</span>
+          <div class="flight-route">
+            <span>桃園 TPE</span>
+            <span>✈️ JX870</span>
+            <span>那霸 OKA</span>
+          </div>
+          <p class="flight-meta"><strong>表定時間：</strong>11:40 – 14:15</p>
+          <p class="flight-meta"><strong>航空公司：</strong>星宇航空 STARLUX</p>
+        </article>
+
+        <article class="flight-card">
+          <span class="flight-tag back">回程航班・2027/01/05</span>
+          <div class="flight-route">
+            <span>那霸 OKA</span>
+            <span>✈️ JX871</span>
+            <span>桃園 TPE</span>
+          </div>
+          <p class="flight-meta"><strong>表定時間：</strong>15:25 – 16:10</p>
+          <p class="flight-meta"><strong>航空公司：</strong>星宇航空 STARLUX</p>
+        </article>
+
+        <article class="flight-card">
+          <span class="flight-tag car">自駕租車・取還據點</span>
+          <div class="flight-route">
+            <span>🚗 OTS 臨空豐崎營業所</span>
+          </div>
+          <p class="flight-meta"><strong>取車日：</strong>2027/01/01 抵達後前往</p>
+          <p class="flight-meta"><strong>還車日：</strong>2027/01/05 搭機前歸還</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 每日行程 -->
+    <section class="section-block" id="itinerary">
+      <div class="section-header">
+        <h2 class="section-title">🗓️ 每日行程時間軸</h2>
+      </div>
+
+      <div class="day-tabs" id="dayTabs" role="tablist" aria-label="選擇行程日期"></div>
+      <div id="dayPanelContainer"></div>
+    </section>
+
+    <!-- 住宿資訊 -->
+    <section class="section-block" id="hotel">
+      <div class="section-header">
+        <h2 class="section-title coral">🏨 住宿資訊</h2>
+      </div>
+      <article class="card">
+        <h3 style="margin: 0 0 6px; font-size: 1.25rem;">HOTEL LANTANA（那霸國際街）</h3>
+        <p style="margin: 0 0 8px;">入住期間：2027/01/01 – 2027/01/05（依行程表住宿安排）</p>
+        <p style="margin: 0;">座落於那霸市中心國際通周邊，晚上逛街、吃消夜與採買伴手禮都很方便。</p>
+        <div class="hotel-box">
+          <div><strong>📍 地址關鍵字：</strong>HOTEL LANTANA 那霸國際街</div>
+          <div style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px;">
+            <a class="btn-link map" href="https://www.google.com/maps/search/?api=1&query=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97" target="_blank" rel="noopener noreferrer">📍 Google 地圖</a>
+            <a class="btn-link web" href="https://lantana-kokusai.com" target="_blank" rel="noopener noreferrer">🌐 官方網站</a>
+            <button type="button" class="btn-mini" onclick="copyText('HOTEL LANTANA（那霸國際街）')">📋 複製飯店名稱</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 匯率與加減乘除百分比計算機 -->
+    <section class="section-block" id="converter">
+      <div class="section-header">
+        <h2 class="section-title green">💴 日幣 ↔ 台幣匯率計算機</h2>
+      </div>
+      <div class="card">
+        <div class="rate-bar">
+          <div>
+            <label for="customRateInput"><strong>自訂匯率（1 JPY = ? TWD）：</strong></label>
+            <input type="number" id="customRateInput" class="rate-input-inline" min="0.0001" step="0.0001" value="0.2068" />
+            <button type="button" id="resetRateBtn" class="btn-mini" style="margin-left: 6px;">↺ 重設 (0.2068)</button>
+          </div>
+          <div class="dir-toggle-group" role="group" aria-label="切換換算方向">
+            <button type="button" class="dir-btn active" id="dirJpyToTwdBtn">日幣 → 台幣</button>
+            <button type="button" class="dir-btn" id="dirTwdToJpyBtn">台幣 → 日圓</button>
+          </div>
+        </div>
+
+        <div class="math-calc-box" aria-label="加減乘除百分比與匯率計算機">
+          <div class="math-display-wrap">
+            <div class="math-expr" id="mathExpr"></div>
+            <div class="math-value" id="mathDisplay">0</div>
+            <div class="math-fx-line" id="mathFxLine">輸入 0 日圓 → 約 0.00 台幣</div>
+          </div>
+
+          <div class="math-keypad">
+            <button type="button" class="math-key fn" data-math="clear">C</button>
+            <button type="button" class="math-key fn" data-math="back">⌫</button>
+            <button type="button" class="math-key op" data-math="pct">%</button>
+            <button type="button" class="math-key op" data-math="/">÷</button>
+
+            <button type="button" class="math-key" data-math="7">7</button>
+            <button type="button" class="math-key" data-math="8">8</button>
+            <button type="button" class="math-key" data-math="9">9</button>
+            <button type="button" class="math-key op" data-math="*">×</button>
+
+            <button type="button" class="math-key" data-math="4">4</button>
+            <button type="button" class="math-key" data-math="5">5</button>
+            <button type="button" class="math-key" data-math="6">6</button>
+            <button type="button" class="math-key op" data-math="-">−</button>
+
+            <button type="button" class="math-key" data-math="1">1</button>
+            <button type="button" class="math-key" data-math="2">2</button>
+            <button type="button" class="math-key" data-math="3">3</button>
+            <button type="button" class="math-key op" data-math="+">+</button>
+
+            <button type="button" class="math-key" data-math="00">00</button>
+            <button type="button" class="math-key" data-math="0">0</button>
+            <button type="button" class="math-key" data-math=".">.</button>
+            <button type="button" class="math-key eq" data-math="=">=</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 快速翻譯（Google 翻譯） -->
+    <section class="section-block" id="translator">
+      <div class="section-header">
+        <h2 class="section-title sky">🌐 快速翻譯</h2>
+      </div>
+      <div class="card">
+        <label for="customTranslateText"><strong>✍️ 輸入想翻譯的中文或日文：</strong></label>
+        <textarea id="customTranslateText" class="custom-textarea" placeholder="在此輸入想翻譯的句子，點選下方「Google 翻譯」會直接帶入文字並另開新分頁..."></textarea>
+        <div class="translate-actions">
+          <div class="translate-left-group">
+            <button type="button" id="copyCustomBtn" class="btn-action soft">📋 複製文字</button>
+            <button type="button" id="clearCustomBtn" class="btn-action coral">🗑️ 清除文字</button>
+          </div>
+          <a id="openGoogleTranslate" class="btn-link map" href="https://translate.google.com/?sl=auto&tl=ja&op=translate" target="_blank" rel="noopener noreferrer">🌐 Google 翻譯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 可打勾清單：待辦清單 / 出發前清單 / 行李清單 -->
+    <section class="section-block" id="checklists">
+      <div class="section-header">
+        <h2 class="section-title coral">✅ 旅遊準備清單</h2>
+      </div>
+      <div class="card">
+        <div class="list-tabs" role="tablist" aria-label="切換清單類別">
+          <button type="button" class="list-tab active" data-list="todo">📝 待辦清單</button>
+          <button type="button" class="list-tab" data-list="before">🗓️ 出發前清單</button>
+          <button type="button" class="list-tab" data-list="packing">🧳 行李清單</button>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 6px;">
+          <span id="listProgressText">已完成 0 / 0 項</span>
+          <button type="button" id="resetCurrentListBtn" class="btn-mini">↺ 還原此清單預設</button>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="listProgressFill"></div>
+        </div>
+
+        <form class="add-item-row" id="addItemForm">
+          <input type="text" id="newItemInput" class="add-item-input" placeholder="新增清單項目，例如：買鳳梨酥、帶太陽眼鏡..." required />
+          <button type="submit" class="btn-action green">＋ 新增</button>
+        </form>
+
+        <ul class="check-items" id="checklistItems"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- 右下角回到最上方按鈕 -->
+  <button type="button" id="backToTopBtn" class="back-to-top" title="回到最上方" aria-label="回到最上方">↑</button>
+
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite"></div>
+
+  <script>
+    // 1. 行程資料
+    const TRIP_DAYS = [
+      {
+        id: "day1",
+        tabLabel: "Day 1",
+        subLabel: "1/1 (五)",
+        title: "2027/01/01｜抵達那霸・取車入住",
+        stops: [
+          {
+            time: "11:40 – 14:15",
+            name: "星宇航空 JX870（桃園 TPE → 那霸 OKA）",
+            desc: "搭乘星宇航空 JX870 航班前往沖繩那霸，準備展開五天四夜的日系自駕小旅行。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Naha+Airport",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" }
+            ]
+          },
+          {
+            time: "抵達後",
+            name: "OTS 臨空豐崎營業所（那霸機場）",
+            desc: "距離那霸機場約 15 分鐘車程的大型租車據點，提供機場接駁服務，辦理取車手續相當順暢。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=OTS+%E8%87%A8%E7%A9%BA%E8%B1%90%E5%B4%8E%E7%87%9F%E6%A5%AD%E6%89%80",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" }
+            ]
+          },
+          {
+            time: "傍晚入住",
+            name: "HOTEL LANTANA（那霸國際街）",
+            desc: "座落於那霸市中心國際通正中央的現代化飯店，下樓即可逛街、品嚐沖繩料理與採買伴手禮，交通與生活機能極佳。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://lantana-kokusai.com" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "day2",
+        tabLabel: "Day 2",
+        subLabel: "1/2 (六)",
+        title: "2027/01/02｜名護動物園・阿古豬美食・購物",
+        stops: [
+          {
+            time: "上午",
+            name: "Neo Park（名護自然動植物公園）",
+            desc: "採用無柵欄自然放養設計的動植物園區，可近距離觀察水豚、紅鶴、巨嘴鳥等動物，還能搭乘可愛的復古小火車遊園。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Neo+Park+Okinawa",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://www.neopark.co.jp/" }
+            ]
+          },
+          {
+            time: "午餐",
+            name: "百年古家 大家 阿古豬",
+            desc: "隱身在名護山林中的百年琉球古民家餐廳，庭園瀑布景致優美，招牌為油花甘甜、入口即化的沖繩頂級「阿古豬」涮涮鍋與沖繩麵。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%99%BE%E5%B9%B4%E5%8F%A4%E5%AE%B6+%E5%A4%A7%E5%AE%B6",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://ufuya.com/" }
+            ]
+          },
+          {
+            time: "午後補給",
+            name: "道の駅許田 フードコート（許田休息站美食區）",
+            desc: "沖繩北部人氣最高的公路休息站，集結現炸沙翁（開口笑）、豬肉蛋飯糰、苦瓜漢堡與各式當地名產，適合自駕途中下車補給。",
+            mapUrl: "https://maps.app.goo.gl/9pamaDhrrivYp3aY6?g_st=il",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://okinawa.letsgojp.com/archives/899306/" }
+            ]
+          },
+          {
+            time: "購物時段",
+            name: "PARCO CITY（浦添西海岸購物中心）",
+            desc: "緊鄰浦添西海岸的沖繩大型海景購物商場，匯集超過兩百間日系服飾、雜貨與美食餐廳，傍晚還能順道欣賞療癒的夕陽海景。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=SAN-A+Urasoe+West+Coast+PARCO+CITY",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://www.parcocity.jp/" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "day3",
+        tabLabel: "Day 3",
+        subLabel: "1/3 (日)",
+        title: "2027/01/03｜美麗海水族館・古宇利島・美國村",
+        stops: [
+          {
+            time: "上午",
+            name: "美ら海水族館 駐車場（P7）",
+            desc: "沖繩必訪的世界級水族館，擁有壯觀的「黑潮之海」巨型水槽，可近距離欣賞鯨鯊與鬼蝠魟悠游；停靠立體停車場 P7 步行距離最近。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E3%82%89%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8+P7",
+            links: [
+              { label: "🌐 水族館官網", cls: "web", url: "https://churaumi.okinawa/" },
+              { label: "🅿️ 停車場 (P7)", cls: "park", url: "https://oki-park.jp/kaiyohaku/acc/88" }
+            ]
+          },
+          {
+            time: "午餐",
+            name: "Kurumaebi Kitchen TAMAYA（車海老廚房 TAMAYA）",
+            desc: "位於宜野座村的車海老（斑節蝦）專賣餐廳，使用自家養殖的新鮮活蝦，現點現炸的香酥天婦羅丼飯與鹽烤大蝦鮮甜彈牙。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Kurumaebi+Kitchen+TAMAYA",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://tamayaab.com/" }
+            ]
+          },
+          {
+            time: "下午",
+            name: "古宇利海洋塔 (KOURI OCEAN TOWER)",
+            desc: "矗立在古宇利島高處的白色展望塔，可搭乘自動駕駛遊園車穿過熱帶花園登塔，將湛藍的「古宇利藍」大海與跨海大橋盡收眼底。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=%E5%8F%A4%E5%AE%87%E5%88%A9%E6%B5%B7%E6%B4%8B%E5%A1%94",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://www.kouri-oceantower.com/" }
+            ]
+          },
+          {
+            time: "傍晚停車",
+            name: "美國村 (北谷町営駐車場/美浜駐車場)",
+            desc: "前往北谷美國村最便利的大型公共停車場，停好車即可輕鬆步行逛遍充滿美式異國風情的彩色建築聚落與海濱步道。",
+            mapUrl: "https://maps.app.goo.gl/xVT9ZfApitsKEvrV8?g_st=il",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://www.okinawa-americanvillage.com/" }
+            ]
+          },
+          {
+            time: "晚餐",
+            name: "グルメ回転寿司市場 美浜店",
+            desc: "美國村超人氣的排隊迴轉壽司名店，主打沖繩近海新鮮漁獲與厚切握壽司，選擇豐富且價格實惠，深受當地人與旅客喜愛。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=%E3%82%B0%E3%83%AB%E3%83%A1%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%E5%B8%82%E5%A0%B4+%E7%BE%8E%E6%B5%9C%E5%BA%97",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "http://gurumekaiten.com/#tempo" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "day4",
+        tabLabel: "Day 4",
+        subLabel: "1/4 (一)",
+        title: "2027/01/04｜首里城・漁師食堂・玉泉洞",
+        stops: [
+          {
+            time: "上午",
+            name: "Shurijo Castle Park Public Parking Space P2（首里城公園停車場）",
+            desc: "琉球王國昔日的政治與文化中心，可漫步於守禮門與城牆之間感受歷史風華，並近距離見證正殿重建工藝；停放 P2 停車場可快速抵達入口。",
+            mapUrl: "https://www.google.com/maps?cid=16951007728708356968",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://oki-park.jp/shurijo/" }
+            ]
+          },
+          {
+            time: "參觀",
+            name: "達摩寺（西來院）",
+            desc: "位於首里城附近的清幽古剎，以祈求學業、事業與開運的達摩不倒翁聞名，參觀後可挑選可愛的達摩御守留作紀念。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=%E9%81%94%E7%A3%A8%E5%AF%BA+%E9%82%A3%E9%9C%B8",
+            links: [
+              { label: "📖 介紹文", cls: "web", url: "https://boo2k.com/okinawa-daruma-temple/" }
+            ]
+          },
+          {
+            time: "午餐",
+            name: "Ryoshi Shokudo Obanburumai Sakana Daitoryo（漁師食堂 大盤振舞 魚大統領）",
+            desc: "由漁協直營的海鮮食堂，以份量豪邁、高 CP 值的生魚片定食、海鮮丼與奶油烤魚聞名，能品嚐到最道地的漁港鮮味。",
+            mapUrl: "https://maps.app.goo.gl/9ra5wfdNKHwrxyKW9",
+            links: [
+              { label: "📖 介紹文", cls: "web", url: "https://plumpyblog.com/ryoshi-shokudo/" }
+            ]
+          },
+          {
+            time: "下午",
+            name: "沖繩世界文化王國・玉泉洞",
+            desc: "集結歷經三十萬年歲月形成的壯觀鐘乳石洞「玉泉洞」、琉球古民家聚落與震撼力十足的傳統太鼓舞表演，一次體驗沖繩自然與文化魅力。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B8%84%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89+%E7%8E%89%E6%B3%89%E6%B4%9E",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://www.gyokusendo.co.jp/okinawaworld/" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "day5",
+        tabLabel: "Day 5",
+        subLabel: "1/5 (二)",
+        title: "2027/01/05｜波上宮參拜・海景鬆餅・賦歸",
+        stops: [
+          {
+            time: "上午",
+            name: "波上宮",
+            desc: "建在懸崖礁石上、俯瞰大海的「琉球八社」之首，擁有獨特的紅瓦本殿與海景鳥居，也是旅程最後一天祈求平安與購買書包御守的熱門神社。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E4%B8%8A%E5%AE%AE",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://naminouegu.jp/" }
+            ]
+          },
+          {
+            time: "下午茶",
+            name: "Happy Pancake 幸福鬆餅（瀨長島）",
+            desc: "位於白色希臘風海景聚落「瀨長島」的人氣舒芙蕾鬆餅店，口感蓬鬆綿密，邊享用甜點還能邊看無敵海景與飛機起降。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%81%82%E3%82%8F%E3%81%9B%E3%81%AE%E3%83%91%E3%83%B3%E3%82%B1%E3%83%BC%E3%82%AD+%E7%80%AC%E9%95%B7%E5%B3%B6",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://magia.tokyo/" }
+            ]
+          },
+          {
+            time: "還車",
+            name: "OTS 臨空豐崎營業所（那霸機場）",
+            desc: "旅程尾聲在此辦理車輛歸還手續，附近即有加油站方便加滿油還車，完成後可搭乘接駁巴士輕鬆前往那霸機場辦理登機。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=OTS+%E8%87%A8%E7%A9%BA%E8%B1%90%E5%B4%8E%E7%87%9F%E6%A5%AD%E6%89%80",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" }
+            ]
+          },
+          {
+            time: "15:25 – 16:10",
+            name: "星宇航空 JX871（那霸 OKA → 桃園 TPE）",
+            desc: "搭乘星宇航空 JX871 返程，帶著滿滿的沖繩海景與美食回憶平安回家。",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Naha+Airport",
+            links: [
+              { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" }
+            ]
+          }
+        ]
+      }
+    ];
+
+    // 2. 渲染每日行程
+    const dayTabsEl = document.getElementById("dayTabs");
+    const dayPanelContainerEl = document.getElementById("dayPanelContainer");
+    let activeDayIdx = 0;
+
+    function switchToDay(idx, scrollToTop = false) {
+      if (idx < 0 || idx >= TRIP_DAYS.length) return;
+      activeDayIdx = idx;
+      renderDayTabs();
+      renderDayPanel(true);
+      if (scrollToTop) {
+        document.getElementById("itinerary").scrollIntoView({
+          behavior: document.body.classList.contains("reduced-motion") ? "auto" : "smooth"
+        });
+      }
+    }
+
+    function renderDayTabs() {
+      dayTabsEl.innerHTML = "";
+      TRIP_DAYS.forEach((day, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.role = "tab";
+        btn.setAttribute("aria-selected", idx === activeDayIdx ? "true" : "false");
+        btn.className = "day-tab" + (idx === activeDayIdx ? " active" : "");
+        btn.innerHTML = `<strong>${day.tabLabel}</strong><span class="tab-sub">${day.subLabel}</span>`;
+        btn.addEventListener("click", () => switchToDay(idx, false));
+        dayTabsEl.appendChild(btn);
+      });
+    }
+
+    function renderDayPanel(withBounce = false) {
+      const day = TRIP_DAYS[activeDayIdx];
+      const stopsHtml = day.stops.map(stop => {
+        const extraBtns = (stop.links || []).map(lk =>
+          `<a class="btn-link ${lk.cls || "web"}" href="${lk.url}" target="_blank" rel="noopener noreferrer">${lk.label}</a>`
+        ).join("");
+
+        return `
+          <article class="stop-card">
+            <div class="stop-top">
+              <strong>🕒 ${stop.time}</strong>
+            </div>
+            <h4 class="stop-title">${stop.name}</h4>
+            <p class="stop-desc">${stop.desc}</p>
+            <div class="stop-actions">
+              <a class="btn-link map" href="${stop.mapUrl}" target="_blank" rel="noopener noreferrer">📍 Google 地圖</a>
+              ${extraBtns}
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      const prevBtnHtml = activeDayIdx > 0
+        ? `<button type="button" class="btn-action sky" onclick="switchToDay(${activeDayIdx - 1}, true)">← 前一天（${TRIP_DAYS[activeDayIdx - 1].tabLabel}）</button>`
+        : "";
+
+      const nextBtnHtml = activeDayIdx < TRIP_DAYS.length - 1
+        ? `<button type="button" class="btn-action yellow" onclick="switchToDay(${activeDayIdx + 1}, true)">後一天（${TRIP_DAYS[activeDayIdx + 1].tabLabel}） →</button>`
+        : "";
+
+      dayPanelContainerEl.innerHTML = `
+        <div class="${withBounce ? "timeline-panel" : ""}">
+          <div class="day-banner">
+            <h3>${day.title}</h3>
+            <span>共 ${day.stops.length} 個行程節點</span>
+          </div>
+          <div class="timeline">${stopsHtml}</div>
+          <div class="day-step-nav">
+            ${prevBtnHtml}
+            ${nextBtnHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    renderDayTabs();
+    renderDayPanel(false);
+
+    // 3. 出發倒數（2027/01/01 11:40）
+    const targetTime = new Date("2027-01-01T11:40:00+08:00").getTime();
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMins = document.getElementById("cdMins");
+    const cdSecs = document.getElementById("cdSecs");
+    const cdStatus = document.getElementById("countdownStatus");
+
+    function updateCountdown() {
+      const diff = targetTime - Date.now();
+      if (diff <= 0) {
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMins.textContent = "00";
+        cdSecs.textContent = "00";
+        cdStatus.textContent = "✈️ 已抵達出發時間（2027/01/01 11:40），祝沖繩自駕旅途愉快！";
+        return;
+      }
+      const totalSec = Math.floor(diff / 1000);
+      const d = Math.floor(totalSec / 86400);
+      const h = Math.floor((totalSec % 86400) / 3600);
+      const m = Math.floor((totalSec % 3600) / 60);
+      const s = totalSec % 60;
+
+      cdDays.textContent = String(d);
+      cdHours.textContent = String(h).padStart(2, "0");
+      cdMins.textContent = String(m).padStart(2, "0");
+      cdSecs.textContent = String(s).padStart(2, "0");
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // 4. 自訂匯率＋加減乘除百分比計算機
+    const DEFAULT_RATE = 0.2068;
+    const RATE_STORAGE_KEY = "okinawa2027_jpy_rate";
+    const customRateInput = document.getElementById("customRateInput");
+    const resetRateBtn = document.getElementById("resetRateBtn");
+    const dirJpyToTwdBtn = document.getElementById("dirJpyToTwdBtn");
+    const dirTwdToJpyBtn = document.getElementById("dirTwdToJpyBtn");
+    const mathExprEl = document.getElementById("mathExpr");
+    const mathDisplayEl = document.getElementById("mathDisplay");
+    const mathFxLineEl = document.getElementById("mathFxLine");
+
+    let fxDirection = "jpyToTwd"; // "jpyToTwd" or "twdToJpy"
+    let mCurrent = "0";
+    let mPrev = null;
+    let mOp = null;
+    let mResetNext = false;
+
+    const OP_SYMBOLS = { "+": "+", "-": "−", "*": "×", "/": "÷" };
+
+    const savedRate = parseFloat(localStorage.getItem(RATE_STORAGE_KEY));
+    if (!Number.isNaN(savedRate) && savedRate > 0) {
+      customRateInput.value = savedRate;
+    }
+
+    function getRate() {
+      const r = parseFloat(customRateInput.value);
+      return (!Number.isNaN(r) && r > 0) ? r : DEFAULT_RATE;
+    }
+
+    function updateFxPreview() {
+      const val = parseFloat(mCurrent);
+      const rate = getRate();
+      if (Number.isNaN(val) || !Number.isFinite(val)) {
+        mathFxLineEl.textContent = "—";
+        return;
+      }
+      if (fxDirection === "jpyToTwd") {
+        const twd = (val * rate).toFixed(2);
+        mathFxLineEl.textContent = `輸入 ${val} 日圓 → 約 ${twd} 台幣`;
+      } else {
+        const jpy = Math.round(val / rate);
+        mathFxLineEl.textContent = `輸入 ${val} 台幣 → 約 ${jpy} 日圓`;
+      }
+    }
+
+    function setFxDirection(dir) {
+      fxDirection = dir;
+      dirJpyToTwdBtn.classList.toggle("active", dir === "jpyToTwd");
+      dirTwdToJpyBtn.classList.toggle("active", dir === "twdToJpy");
+      updateFxPreview();
+    }
+
+    dirJpyToTwdBtn.addEventListener("click", () => setFxDirection("jpyToTwd"));
+    dirTwdToJpyBtn.addEventListener("click", () => setFxDirection("twdToJpy"));
+
+    customRateInput.addEventListener("input", () => {
+      const r = parseFloat(customRateInput.value);
+      if (!Number.isNaN(r) && r > 0) {
+        localStorage.setItem(RATE_STORAGE_KEY, String(r));
+        updateFxPreview();
+      }
+    });
+
+    resetRateBtn.addEventListener("click", () => {
+      customRateInput.value = DEFAULT_RATE;
+      localStorage.setItem(RATE_STORAGE_KEY, String(DEFAULT_RATE));
+      updateFxPreview();
+      showToast("已重設為預設匯率 0.2068");
+    });
+
+    function formatMathNum(num) {
+      if (!Number.isFinite(num)) return "錯誤";
+      const rounded = Math.round(num * 1e8) / 1e8;
+      return String(rounded);
+    }
+
+    function renderMathScreen() {
+      mathDisplayEl.textContent = mCurrent;
+      mathExprEl.textContent = (mPrev !== null && mOp)
+        ? `${formatMathNum(mPrev)} ${OP_SYMBOLS[mOp] || mOp}`
+        : "";
+      updateFxPreview();
+    }
+
+    function computeBinary(a, b, op) {
+      if (op === "+") return a + b;
+      if (op === "-") return a - b;
+      if (op === "*") return a * b;
+      if (op === "/") return b === 0 ? NaN : a / b;
+      return b;
+    }
+
+    document.querySelectorAll(".math-key").forEach(key => {
+      key.addEventListener("click", () => {
+        const act = key.dataset.math;
+
+        if (act === "clear") {
+          mCurrent = "0";
+          mPrev = null;
+          mOp = null;
+          mResetNext = false;
+          renderMathScreen();
+          return;
+        }
+
+        if (act === "back") {
+          if (mResetNext || mCurrent.length <= 1 || mCurrent === "錯誤") {
+            mCurrent = "0";
+            mResetNext = false;
+          } else {
+            mCurrent = mCurrent.slice(0, -1);
+          }
+          renderMathScreen();
+          return;
+        }
+
+        if (act === "pct") {
+          const cur = parseFloat(mCurrent);
+          if (Number.isNaN(cur)) return;
+          if (mPrev !== null && (mOp === "+" || mOp === "-")) {
+            mCurrent = formatMathNum((mPrev * cur) / 100);
+          } else {
+            mCurrent = formatMathNum(cur / 100);
+          }
+          mResetNext = false;
+          renderMathScreen();
+          return;
+        }
+
+        if (["+", "-", "*", "/"].includes(act)) {
+          const cur = parseFloat(mCurrent);
+          if (!Number.isNaN(cur)) {
+            if (mPrev !== null && mOp && !mResetNext) {
+              const res = computeBinary(mPrev, cur, mOp);
+              mPrev = Number.isFinite(res) ? res : null;
+              mCurrent = formatMathNum(res);
+            } else {
+              mPrev = cur;
+            }
+          }
+          mOp = act;
+          mResetNext = true;
+          renderMathScreen();
+          return;
+        }
+
+        if (act === "=") {
+          if (mPrev === null || !mOp) return;
+          const cur = parseFloat(mCurrent);
+          const res = computeBinary(mPrev, cur, mOp);
+          mathExprEl.textContent = `${formatMathNum(mPrev)} ${OP_SYMBOLS[mOp]} ${formatMathNum(cur)} =`;
+          mCurrent = formatMathNum(res);
+          mPrev = null;
+          mOp = null;
+          mResetNext = true;
+          mathDisplayEl.textContent = mCurrent;
+          updateFxPreview();
+          return;
+        }
+
+        if (mResetNext || mCurrent === "錯誤") {
+          if (act === ".") mCurrent = "0.";
+          else if (act === "00") mCurrent = "0";
+          else mCurrent = act;
+          mResetNext = false;
+        } else {
+          if (act === ".") {
+            if (mCurrent.includes(".")) return;
+            mCurrent += ".";
+          } else if (act === "00") {
+            if (mCurrent !== "0") mCurrent += "00";
+          } else {
+            mCurrent = (mCurrent === "0") ? act : mCurrent + act;
+          }
+        }
+        renderMathScreen();
+      });
+    });
+
+    renderMathScreen();
+
+    // 5. 快速翻譯（僅保留 Google 翻譯）
+    const customTranslateText = document.getElementById("customTranslateText");
+    const openGoogleTranslate = document.getElementById("openGoogleTranslate");
+
+    function updateTranslateLinks() {
+      const q = encodeURIComponent(customTranslateText.value.trim());
+      openGoogleTranslate.href = q
+        ? `https://translate.google.com/?sl=auto&tl=ja&text=${q}&op=translate`
+        : "https://translate.google.com/?sl=auto&tl=ja&op=translate";
+    }
+
+    customTranslateText.addEventListener("input", updateTranslateLinks);
+    document.getElementById("copyCustomBtn").addEventListener("click", () => {
+      if (!customTranslateText.value.trim()) {
+        showToast("請先輸入想複製的文字");
+        return;
+      }
+      copyText(customTranslateText.value.trim());
+    });
+    document.getElementById("clearCustomBtn").addEventListener("click", () => {
+      customTranslateText.value = "";
+      updateTranslateLinks();
+      customTranslateText.focus();
+      showToast("已清除翻譯文字");
+    });
+
+    // 6. 可打勾清單（待辦清單 / 出發前清單 / 行李清單）
+    const DEFAULT_LISTS = {
+      todo: [
+        { id: "t1", text: "確認星宇航空 JX870 / JX871 航班狀態與座位", done: false },
+        { id: "t2", text: "確認 OTS 臨空豐崎營業所取還車預約資訊", done: false },
+        { id: "t4", text: "確認 HOTEL LANTANA（那霸國際街）訂房憑證", done: false }
+      ],
+      before: [
+        { id: "b1", text: "護照效期確認（建議 6 個月以上）", done: false },
+        { id: "b2", text: "攜帶台灣駕照正本＋駕照日文譯本", done: false },
+        { id: "b3", text: "填寫 Visit Japan Web（入境審查與海關申報）", done: false },
+        { id: "b4", text: "開通海外漫遊或準備沖繩 eSIM / 網卡", done: false },
+        { id: "b5", text: "投保旅遊平安險與不便險", done: false }
+      ],
+      packing: [
+        { id: "p1", text: "5 天份換洗衣物與保暖外套（1 月沖繩早晚微涼）", done: false },
+        { id: "p2", text: "好走的步鞋與防曬／駕駛墨鏡", done: false },
+        { id: "p3", text: "日圓現鈔（含零錢與千元鈔）＋海外回饋信用卡", done: false },
+        { id: "p4", text: "行動電源、充電線等3C用品", done: false },
+        { id: "p5", text: "個人常備藥品、暈車藥與保溫水壺", done: false }
+      ]
+    };
+
+    const LIST_STORAGE_KEY = "okinawa2027_checklists_v3";
+    let listsState = loadLists();
+    let currentListKey = "todo";
+
+    function loadLists() {
+      try {
+        const raw = localStorage.getItem(LIST_STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed.todo && parsed.before && parsed.packing) return parsed;
+        }
+      } catch (_) {}
+      return JSON.parse(JSON.stringify(DEFAULT_LISTS));
+    }
+
+    function saveLists() {
+      localStorage.setItem(LIST_STORAGE_KEY, JSON.stringify(listsState));
+    }
+
+    const checklistItemsEl = document.getElementById("checklistItems");
+    const listProgressTextEl = document.getElementById("listProgressText");
+    const listProgressFillEl = document.getElementById("listProgressFill");
+
+    document.querySelectorAll(".list-tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        currentListKey = tab.dataset.list;
+        document.querySelectorAll(".list-tab").forEach(t => t.classList.toggle("active", t === tab));
+        renderChecklist();
+      });
+    });
+
+    document.getElementById("addItemForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = document.getElementById("newItemInput");
+      const val = input.value.trim();
+      if (!val) return;
+      listsState[currentListKey].push({
+        id: "item_" + Date.now() + "_" + Math.random().toString(36).slice(2, 6),
+        text: val,
+        done: false
+      });
+      input.value = "";
+      saveLists();
+      renderChecklist();
+    });
+
+    document.getElementById("resetCurrentListBtn").addEventListener("click", () => {
+      listsState[currentListKey] = JSON.parse(JSON.stringify(DEFAULT_LISTS[currentListKey]));
+      saveLists();
+      renderChecklist();
+      showToast("已還原此清單預設項目");
+    });
+
+    function renderChecklist() {
+      const items = listsState[currentListKey] || [];
+      const doneCount = items.filter(it => it.done).length;
+      const totalCount = items.length;
+      const pct = totalCount === 0 ? 0 : Math.round((doneCount / totalCount) * 100);
+
+      listProgressTextEl.textContent = `已完成 ${doneCount} / ${totalCount} 項（${pct}%）`;
+      listProgressFillEl.style.width = pct + "%";
+
+      checklistItemsEl.innerHTML = items.map(item => `
+        <li class="check-item ${item.done ? "done" : ""}">
+          <label class="check-label">
+            <input type="checkbox" ${item.done ? "checked" : ""} onchange="toggleCheckItem('${item.id}')" />
+            <span class="check-text">${escapeHtml(item.text)}</span>
+          </label>
+          <button type="button" class="del-btn" onclick="deleteCheckItem('${item.id}')" aria-label="刪除項目">✕</button>
+        </li>
+      `).join("");
+    }
+
+    window.toggleCheckItem = function(id) {
+      const target = listsState[currentListKey].find(it => it.id === id);
+      if (target) {
+        target.done = !target.done;
+        saveLists();
+        renderChecklist();
+      }
+    };
+
+    window.deleteCheckItem = function(id) {
+      listsState[currentListKey] = listsState[currentListKey].filter(it => it.id !== id);
+      saveLists();
+      renderChecklist();
+    };
+
+    renderChecklist();
+
+    // 7. 右下角回到最上方按鈕
+    document.getElementById("backToTopBtn").addEventListener("click", () => {
+      const reduced = document.body.classList.contains("reduced-motion");
+      window.scrollTo({
+        top: 0,
+        behavior: reduced ? "auto" : "smooth"
+      });
+    });
+
+    // 8. 減少動態效果開關
+    const MOTION_KEY = "okinawa2027_reduced_motion";
+    const motionToggleBtn = document.getElementById("motionToggleBtn");
+
+    function applyReducedMotion(enabled) {
+      document.body.classList.toggle("reduced-motion", enabled);
+      motionToggleBtn.setAttribute("aria-pressed", String(enabled));
+      motionToggleBtn.innerHTML = enabled ? "<span>🌿 已減少動態</span>" : "<span>✨ 減少動態</span>";
+      localStorage.setItem(MOTION_KEY, String(enabled));
+    }
+
+    const systemPrefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const savedMotion = localStorage.getItem(MOTION_KEY);
+    applyReducedMotion(savedMotion !== null ? savedMotion === "true" : systemPrefersReduced);
+
+    motionToggleBtn.addEventListener("click", () => {
+      const isNowReduced = !document.body.classList.contains("reduced-motion");
+      applyReducedMotion(isNowReduced);
+      showToast(isNowReduced ? "已開啟減少動態效果" : "已恢復繪本動態效果");
+    });
+
+    // 工具函式
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const el = document.getElementById("toastMsg");
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove("show"), 2200);
+    }
+
+    window.copyText = function(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast("已複製：" + text)).catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    };
+
+    function fallbackCopy(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      showToast("已複製：" + text);
+    }
+  </script>
+</body>
+</html>
