@@ -1556,8 +1556,8 @@
         <textarea id="customTranslateText" class="custom-textarea" placeholder="在此輸入想翻譯的句子，點選下方「Google 翻譯」會直接帶入文字並另開新分頁..."></textarea>
         <div class="translate-actions">
           <div class="translate-left-group">
-            <button type="button" id="copyCustomBtn" class="btn-action soft">複製</button>
-            <button type="button" id="pasteCustomBtn" class="btn-action sky">貼上</button>
+            <button type="button" id="copyCustomBtn" class="btn-action green">複製</button>
+            <button type="button" id="pasteCustomBtn" class="btn-action soft">貼上</button>
             <button type="button" id="clearCustomBtn" class="btn-action coral">清除</button>
           </div>
           <a id="openGoogleTranslate" class="btn-link map" href="https://translate.google.com/?sl=auto&tl=ja&op=translate" target="_blank" rel="noopener noreferrer">Google 翻譯</a>
@@ -2346,7 +2346,7 @@
 
     renderMathScreen();
 
-    // 5. 快速翻譯（複製、貼上、清除 + Google 翻譯）
+    // 5. 快速翻譯（複製：綠色、貼上：暖沙色、清除：紅色 + Google 翻譯）
     const customTranslateText = document.getElementById("customTranslateText");
     const openGoogleTranslate = document.getElementById("openGoogleTranslate");
 
