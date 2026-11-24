@@ -62,6 +62,1258 @@
       justify-content: space-between;
       gap: 10px;
       flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .brand-mini {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .brand-dot {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--yellow);
+      border: 2.5px solid var(--ink);
+      font-size: 0.9rem;
+    }
+
+    .nav-scroll {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 2px 4px;
+      flex: 1 1 220px;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--ink);
+      background-color: var(--card-white);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      background-color: var(--yellow);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .motion-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--soft-sand);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      color: var(--ink);
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .motion-toggle[aria-pressed="true"] {
+      background-color: var(--green);
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 18px 14px 0;
+    }
+
+    .section-block {
+      margin-top: 28px;
+      scroll-margin-top: 76px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.35rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--yellow);
+      border: var(--border-w) solid var(--ink);
+      border-radius: 999px;
+      padding: 5px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-title.sky { background-color: var(--sky); }
+    .section-title.coral { background-color: var(--coral); }
+    .section-title.green { background-color: var(--green); }
+
+    .card {
+      background-color: var(--card-white);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-hard);
+    }
+
+    /* 首頁卡片 */
+    .hero-card {
+      background-color: var(--paper);
+      padding: 20px 18px 22px;
+      text-align: center;
+    }
+
+    .hero-svg-wrap {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto 14px;
+      background-color: var(--sky);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-svg-wrap svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background-color: var(--coral);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 3px 14px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 0 var(--ink);
+    }
+
+    .hero-title {
+      margin: 4px 0 6px;
+      font-size: clamp(1.5rem, 4.8vw, 2.25rem);
+      line-height: 1.25;
+    }
+
+    .hero-dates {
+      margin: 0 0 16px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .countdown-box {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(58px, 1fr));
+      gap: 8px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .countdown-item {
+      background-color: var(--card-white);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 8px 6px;
+      box-shadow: 0 3px 0 var(--ink);
+    }
+
+    .countdown-item:nth-child(1) { background-color: var(--yellow); }
+    .countdown-item:nth-child(2) { background-color: var(--sky); }
+    .countdown-item:nth-child(3) { background-color: var(--green); }
+    .countdown-item:nth-child(4) { background-color: var(--coral); }
+
+    .countdown-num {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .countdown-label {
+      font-size: 0.8rem;
+    }
+
+    .countdown-status {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    /* 航班與租車網格 */
+    .flight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .flight-card {
+      position: relative;
+      background-color: var(--card-white);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flight-tag {
+      display: inline-block;
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 2px 12px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+
+    .flight-tag.out { background-color: var(--yellow); }
+    .flight-tag.back { background-color: var(--coral); }
+    .flight-tag.car { background-color: var(--green); }
+
+    .flight-route {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 6px 0 10px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      flex-wrap: wrap;
+    }
+
+    .flight-meta {
+      margin: 4px 0;
+      font-size: 0.92rem;
+    }
+
+    /* 每日行程日期切換 */
+    .day-tabs {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      padding: 4px 2px 10px;
+    }
+
+    .day-tab {
+      min-width: 0;
+      background-color: var(--card-white);
+      color: var(--ink);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 9px 6px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .day-tab:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .day-tab.active {
+      background-color: var(--yellow);
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 5px 0 var(--ink);
+    }
+
+    .day-tab .tab-sub {
+      display: block;
+      font-size: 0.78rem;
+      opacity: 0.85;
+    }
+
+    /* 彈跳動畫 */
+    @keyframes dayBounceIn {
+      0% {
+        opacity: 0;
+        transform: translateY(14px) scale(0.97);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.01);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .timeline-panel {
+      animation: dayBounceIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .day-banner {
+      background-color: var(--sky);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .day-banner h3 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    /* 時間軸 */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      bottom: 10px;
+      width: 4px;
+      background-color: var(--ink);
+      border-radius: 999px;
+    }
+
+    .stop-card {
+      position: relative;
+      background-color: var(--card-white);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 15px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stop-card::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 20px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--coral);
+      border: 3px solid var(--ink);
+    }
+
+    .stop-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .stop-title {
+      margin: 4px 0 6px;
+      font-size: 1.12rem;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .stop-desc {
+      margin: 0 0 12px;
+      font-size: 0.94rem;
+      color: var(--ink);
+    }
+
+    .stop-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 前一天 / 後一天按鈕靠右對齊 */
+    .day-step-nav {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* 統一按鈕顏色：google map藍色、官網黃色、停車場綠色、介紹文紅色 */
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      text-decoration: none;
+      color: var(--ink);
+      background-color: var(--soft-sand);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      line-height: 1.35;
+      text-align: center;
+      box-shadow: 0 3px 0 var(--ink);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+    }
+
+    .btn-link.map { background-color: var(--sky); }     /* Google Map 藍色 */
+    .btn-link.web { background-color: var(--yellow); }  /* 官方網站 黃色 */
+    .btn-link.park { background-color: var(--green); }  /* 停車場 綠色 */
+    .btn-link.intro { background-color: var(--coral); } /* 介紹文 紅色 */
+
+    .btn-link:hover,
+    .btn-link:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(0.96);
+      outline: none;
+    }
+
+    /* 住宿卡片 */
+    .hotel-box {
+      background-color: var(--soft-sand);
+      border: 2.5px dashed var(--ink);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin-top: 12px;
+      font-size: 0.92rem;
+    }
+
+    .hotel-actions {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background-color: var(--yellow);
+      color: var(--ink);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      box-shadow: 0 3px 0 var(--ink);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+    }
+
+    .btn-action:hover,
+    .btn-action:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(0.96);
+      outline: none;
+    }
+
+    .btn-action.sky { background-color: var(--sky); }
+    .btn-action.green { background-color: var(--green); }
+    .btn-action.coral { background-color: var(--coral); }
+    .btn-action.soft { background-color: var(--soft-sand); }
+
+    /* 匯率與計算機上方設定列 */
+    .rate-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background-color: var(--soft-sand);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      font-size: 0.9rem;
+    }
+
+    .rate-control-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rate-input-inline {
+      width: 102px;
+      background-color: var(--card-white);
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .dir-toggle-group {
+      display: inline-flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .dir-btn {
+      background-color: var(--card-white);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .dir-btn.active {
+      background-color: var(--yellow);
+      font-weight: 700;
+    }
+
+    /* 加減乘除百分比計算機 */
+    .math-calc-box {
+      margin-top: 12px;
+      background-color: var(--paper);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 14px;
+    }
+
+    .math-display-wrap {
+      background-color: var(--card-white);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+
+    .math-expr {
+      font-size: 0.85rem;
+      opacity: 0.78;
+      min-height: 20px;
+    }
+
+    .math-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      word-break: break-all;
+    }
+
+    .math-fx-line {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1.5px dashed var(--ink);
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--ink);
+      word-break: break-all;
+    }
+
+    .math-keypad {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .math-key {
+      min-width: 0;
+      background-color: var(--soft-sand);
+      color: var(--ink);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 10px 4px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .math-key:hover {
+      background-color: var(--yellow);
+      transform: translateY(-2px);
+    }
+
+    .math-key.op { background-color: var(--sky); }
+    .math-key.fn { background-color: var(--coral); }
+    .math-key.eq { background-color: var(--green); }
+
+    /* 翻譯小幫手 */
+    .btn-mini {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background-color: var(--card-white);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 10px;
+      padding: 5px 10px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-mini:hover {
+      background-color: var(--yellow);
+      transform: translateY(-1px);
+    }
+
+    .custom-textarea {
+      width: 100%;
+      min-height: 120px;
+      background-color: var(--paper);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      color: var(--ink);
+      resize: vertical;
+      margin: 8px 0 12px;
+    }
+
+    .custom-textarea:focus {
+      outline: none;
+      background-color: #FFF6D6;
+    }
+
+    .translate-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .translate-left-group {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 清單頁籤與項目 */
+    .list-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .list-tab {
+      background-color: var(--card-white);
+      color: var(--ink);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .list-tab.active {
+      background-color: var(--coral);
+      transform: translateY(-2px);
+    }
+
+    .progress-bar-wrap {
+      background-color: var(--soft-sand);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      height: 18px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--green);
+      transition: width 0.3s ease;
+    }
+
+    .add-item-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .add-item-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      background-color: var(--paper);
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .check-items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background-color: var(--paper);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+    }
+
+    .check-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      flex: 1;
+      font-size: 0.95rem;
+      word-break: break-word;
+    }
+
+    .check-label input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      accent-color: var(--ink);
+      cursor: pointer;
+    }
+
+    .check-item.done .check-text {
+      text-decoration: line-through;
+      opacity: 0.55;
+    }
+
+    .del-btn {
+      flex-shrink: 0;
+      background: transparent;
+      border: 1.5px solid var(--ink);
+      border-radius: 8px;
+      padding: 2px 8px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .del-btn:hover {
+      background-color: var(--coral);
+    }
+
+    /* 右下角回到最上方按鈕 */
+    .back-to-top {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 150;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background-color: var(--yellow);
+      color: var(--ink);
+      border: var(--border-w) solid var(--ink);
+      box-shadow: var(--shadow-sm);
+      font-family: inherit;
+      font-size: 1.3rem;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .back-to-top:hover,
+    .back-to-top:focus-visible {
+      background-color: var(--coral);
+      transform: translateY(-4px) scale(1.06);
+      outline: none;
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 300;
+      background-color: var(--ink);
+      color: var(--paper);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      max-width: 90vw;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .toast-msg.show {
+      opacity: 1;
+    }
+
+    /* 繪本 SVG 輕微動態 */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes cloudDrift {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(7px); }
+    }
+
+    @keyframes carBump {
+      0%, 100% { transform: translate(0px, 0px); }
+      50% { transform: translate(5px, -2px); }
+    }
+
+    .svg-cloud {
+      animation: cloudDrift 5s ease-in-out infinite;
+    }
+
+    .svg-float {
+      animation: floatSlow 3.6s ease-in-out infinite;
+    }
+
+    .svg-car {
+      animation: carBump 2.4s ease-in-out infinite;
+    }
+
+    /* 減少動態效果（系統偏好 或 手動開關） */
+    body.reduced-motion *,
+    body.reduced-motion *::before,
+    body.reduced-motion *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *:not(.allow-motion),
+      *::before:not(.allow-motion),
+      *::after:not(.allow-motion) {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ================= RWD 響應式設計（平板 / 手機 / 小螢幕） ================= */
+    @media (max-width: 768px) {
+      .container {
+        padding: 14px 12px 0;
+      }
+
+      .card {
+        padding: 15px 14px;
+        border-radius: 22px;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+        padding: 5px 14px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sticky-header {
+        padding: 8px 10px;
+      }
+
+      .header-inner {
+        gap: 6px 8px;
+      }
+
+      .brand-mini {
+        font-size: 0.92rem;
+        gap: 6px;
+      }
+
+      .brand-dot {
+        width: 24px;
+        height: 24px;
+        font-size: 0.82rem;
+      }
+
+      .motion-toggle {
+        padding: 3px 9px;
+        font-size: 0.78rem;
+      }
+
+      .nav-scroll {
+        order: 3;
+        flex: 1 1 100%;
+        width: 100%;
+        gap: 5px;
+        padding: 3px 2px 2px;
+      }
+
+      .nav-link {
+        padding: 3px 9px;
+        font-size: 0.78rem;
+        border-width: 2px;
+      }
+
+      .countdown-box {
+        gap: 6px;
+      }
+
+      .countdown-num {
+        font-size: 1.25rem;
+      }
+
+      .day-tabs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .day-tab {
+        padding: 8px 4px;
+        font-size: 0.86rem;
+      }
+
+      .timeline {
+        padding-left: 18px;
+      }
+
+      .timeline::before {
+        left: 5px;
+      }
+
+      .stop-card {
+        padding: 13px 12px;
+      }
+
+      .stop-card::before {
+        left: -17px;
+        width: 12px;
+        height: 12px;
+      }
+
+      .stop-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .stop-actions .btn-link {
+        width: 100%;
+        padding: 7px 8px;
+        font-size: 0.84rem;
+      }
+
+      .hotel-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .hotel-actions .btn-link,
+      .hotel-actions .btn-mini {
+        width: 100%;
+      }
+
+      .day-step-nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 8px;
+      }
+
+      .day-step-nav .btn-action {
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+      }
+
+      .rate-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .dir-toggle-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+
+      .dir-btn {
+        text-align: center;
+        padding: 6px 8px;
+      }
+
+      .math-value,
+      .math-fx-line {
+        font-size: 1.35rem;
+      }
+
+      .translate-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .translate-left-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .translate-actions .btn-link {
+        width: 100%;
+      }
+
+      .list-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .list-tab {
+        padding: 6px 6px;
+        font-size: 0.82rem;
+        text-align: center;
+      }
+
+      .add-item-row {
+        flex-direction: column;
+      }
+
+      .add-item-row .btn-action {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .day-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stop-actions,
+      .hotel-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 頂端固定選單 -->
+  <header class="sticky-header">
+    <div class="header-inner">
+      <div class="brand-mini">
+        <span class="brand-dot" aria-hidden="true">🌺</span>
+        <span>2027 沖繩自駕</span>
+      </div>
+      <nav class="nav-scroll" aria-label="主要區塊導覽">
+        <a class="nav-link" href="#top">首頁</a>
+        <a class="nav-link" href="#flight-car">航班/租車</a>
+        <a class="nav-link" href="#itinerary">每日行程</a>
+        <a class="nav-link" href="#hotel">住宿</a>
+        <a class="nav-link" href="#converter">匯率計算機</a>
+        <a class="nav-link" href="#translator">快速翻譯</a>
+        <a class="nav-link" href="#checklists">準備清單</a>
+      </nav>
+      <button type="button" id="motionToggleBtn" class="motion-toggle" aria-pressed="false">
+        <span>✨ 減少動態</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+    <!-- 首頁插圖＋標題＋出發倒數 -->
+    <section class="card hero-card">
+      <div class="hero-svg-wrap">
+        <svg viewBox="0 0 720 270" role="img" aria-label="沖繩日系繪本插圖：藍天大海、首里城守禮門意象、跨海大橋、Q版鯨鯊與自駕小車">
+          <rect x="0" y="0" width="720" height="168" fill="#A8D3E6" />
+          <circle cx="615" cy="54" r="28" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" />
+
+          <g class="svg-cloud">
+            <path d="M90 56 Q96 36 118 38 Q132 24 154 34 Q174 36 178 56 Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <path d="M440 44 Q446 28 464 30 Q476 18 494 28 Q510 30 514 44 Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+          </g>
+
+          <path d="M45 146 L115 92 L185 146 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+          <rect x="215" y="102" width="110" height="44" fill="#F2A497" stroke="#3E3A39" stroke-width="3" />
+          <path d="M202 102 L270 74 L338 102 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+          <rect x="255" y="118" width="30" height="28" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
+
+          <rect x="360" y="124" width="295" height="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
+          <line x1="415" y1="100" x2="415" y2="146" stroke="#3E3A39" stroke-width="3" />
+          <line x1="565" y1="100" x2="565" y2="146" stroke="#3E3A39" stroke-width="3" />
+          <path d="M360 124 Q415 98 470 124" fill="none" stroke="#3E3A39" stroke-width="2.5" />
+          <path d="M510 124 Q565 98 620 124" fill="none" stroke="#3E3A39" stroke-width="2.5" />
+
+          <rect x="0" y="144" width="720" height="82" fill="#78BBD9" stroke="#3E3A39" stroke-width="3" />
+          <path d="M25 166 Q45 158 65 166 T105 166" fill="none" stroke="#FFFCF6" stroke-width="3" stroke-linecap="round" />
+          <path d="M560 174 Q580 166 600 174 T640 174" fill="none" stroke="#FFFCF6" stroke-width="3" stroke-linecap="round" />
+
+          <g class="svg-float">
+            <path d="M150 166 L142 152 L162 165 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <path d="M164 192 L154 206 L176 194 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <path d="M104 182 C112 164, 152 160, 184 166 C202 169, 212 176, 212 183 C212 190, 200 197, 178 197 C148 197, 116 192, 104 182 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <path d="M116 186 C138 186, 178 185, 209 184 C206 191, 194 195, 176 195 C148 195, 126 192, 116 186 Z" fill="#FFFCF6" />
+            <path d="M106 182 L84 166 L91 182 L84 196 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <circle cx="194" cy="177" r="3" fill="#3E3A39" />
+            <circle cx="195" cy="176" r="1" fill="#FFFCF6" />
+            <circle cx="187" cy="182" r="3.5" fill="#F2A497" />
+            <path d="M198 183 Q204 186 209 182" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round" />
+            <circle cx="144" cy="173" r="2.2" fill="#FFFCF6" />
+            <circle cx="156" cy="172" r="2.2" fill="#FFFCF6" />
+            <circle cx="168" cy="173" r="2.2" fill="#FFFCF6" />
+            <circle cx="150" cy="179" r="2" fill="#FFFCF6" />
+            <circle cx="162" cy="179" r="2" fill="#FFFCF6" />
+          </g>
+
+          <rect x="0" y="218" width="720" height="52" fill="#F7EFE0" stroke="#3E3A39" stroke-width="3" />
+          <line x1="20" y1="244" x2="700" y2="244" stroke="#3E3A39" stroke-width="3" stroke-dasharray="16 14" />
+
+          <g class="svg-car">
+            <path d="M475 234 L486 212 L538 212 L550 234 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <rect x="462" y="228" width="98" height="20" rx="8" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" />
+            <rect x="492" y="216" width="18" height="12" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" />
+            <rect x="515" y="216" width="20" height="12" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" />
+            <circle cx="486" cy="248" r="10" fill="#3E3A39" stroke="#FFFCF6" stroke-width="2.5" />
+            <circle cx="538" cy="248" r="10" fill="#3E3A39" stroke="#FFFCF6" stroke-width="2.5" />
+          </g>
+        </svg>
+      </div>
+
+      <span class="hero-badge">🚗 沖繩 5 天 4 夜自駕繪本手帳</span>
+      <h1 class="hero-title">2027 沖繩新年自駕之旅</h1>
+      <p class="hero-dates">2027/01/01（五）– 2027/01/05（二）｜星宇航空 JX870 / JX871・OTS 租車</p>
+
+      <div class="countdown-box" id="countdownBox" aria-live="polite">
+        <div class="countdown-item">
+          <span class="countdown-num" id="cdDays">--</span>
+          <span class="countdown-label">天</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cdHours">--</span>
+          <span class="countdown-label">小時</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cdMins">--</span>
+          <span class="countdown<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2027 沖繩繪本風自駕行程｜2027/01/01 - 2027/01/05</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #FFFCF6;
+      --ink: #3E3A39;
+      --coral: #F2A497;
+      --yellow: #F6D27A;
+      --sky: #A8D3E6;
+      --green: #B9DAA5;
+      --card-white: #FFFDF9;
+      --soft-sand: #F7EFE0;
+      --border-w: 3px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --shadow-hard: 0 5px 0 var(--ink);
+      --shadow-sm: 0 3px 0 var(--ink);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 0 84px;
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: "Huninn", "Noto Sans TC", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* 頂端固定選單 */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--paper);
+      border-bottom: var(--border-w) solid var(--ink);
+      padding: 10px 14px;
+    }
+
+    .header-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .brand-mini {
