@@ -1250,1230 +1250,6 @@
         </div>
         <div class="countdown-item">
           <span class="countdown-num" id="cdMins">--</span>
-          <span class="countdown<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2027 沖繩繪本風自駕行程｜2027/01/01 - 2027/01/05</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --paper: #FFFCF6;
-      --ink: #3E3A39;
-      --coral: #F2A497;
-      --yellow: #F6D27A;
-      --sky: #A8D3E6;
-      --green: #B9DAA5;
-      --card-white: #FFFDF9;
-      --soft-sand: #F7EFE0;
-      --border-w: 3px;
-      --radius-lg: 26px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --shadow-hard: 0 5px 0 var(--ink);
-      --shadow-sm: 0 3px 0 var(--ink);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      padding: 0 0 84px;
-      background-color: var(--paper);
-      color: var(--ink);
-      font-family: "Huninn", "Noto Sans TC", sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* 頂端固定選單 */
-    .sticky-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: var(--paper);
-      border-bottom: var(--border-w) solid var(--ink);
-      padding: 10px 14px;
-    }
-
-    .header-inner {
-      max-width: 820px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .brand-mini {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      font-size: 0.98rem;
-      white-space: nowrap;
-    }
-
-    .brand-dot {
-      display: inline-grid;
-      place-items: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background-color: var(--yellow);
-      border: 2.5px solid var(--ink);
-      font-size: 0.9rem;
-    }
-
-    .nav-scroll {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      padding-bottom: 2px;
-      flex: 1 1 auto;
-      min-width: 180px;
-    }
-
-    .nav-scroll::-webkit-scrollbar {
-      display: none;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: var(--ink);
-      background-color: var(--card-white);
-      border: 2.5px solid var(--ink);
-      border-radius: 999px;
-      padding: 4px 11px;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      box-shadow: 0 2px 0 var(--ink);
-      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus-visible {
-      background-color: var(--yellow);
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    .motion-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: var(--soft-sand);
-      border: 2.5px solid var(--ink);
-      border-radius: 999px;
-      padding: 4px 11px;
-      font-family: inherit;
-      font-size: 0.82rem;
-      color: var(--ink);
-      cursor: pointer;
-      white-space: nowrap;
-      box-shadow: 0 2px 0 var(--ink);
-      transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .motion-toggle[aria-pressed="true"] {
-      background-color: var(--green);
-    }
-
-    .container {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 18px 14px 0;
-    }
-
-    .section-block {
-      margin-top: 28px;
-      scroll-margin-top: 76px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-
-    .section-title {
-      margin: 0;
-      font-size: 1.35rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: var(--yellow);
-      border: var(--border-w) solid var(--ink);
-      border-radius: 999px;
-      padding: 5px 16px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .section-title.sky { background-color: var(--sky); }
-    .section-title.coral { background-color: var(--coral); }
-    .section-title.green { background-color: var(--green); }
-
-    .card {
-      background-color: var(--card-white);
-      border: var(--border-w) solid var(--ink);
-      border-radius: var(--radius-lg);
-      padding: 18px;
-      box-shadow: var(--shadow-hard);
-    }
-
-    /* 首頁卡片 */
-    .hero-card {
-      background-color: var(--paper);
-      padding: 20px 18px 22px;
-      text-align: center;
-    }
-
-    .hero-svg-wrap {
-      width: 100%;
-      max-width: 680px;
-      margin: 0 auto 14px;
-      background-color: var(--sky);
-      border: var(--border-w) solid var(--ink);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .hero-svg-wrap svg {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background-color: var(--coral);
-      border: 2.5px solid var(--ink);
-      border-radius: 999px;
-      padding: 3px 14px;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-      box-shadow: 0 2px 0 var(--ink);
-    }
-
-    .hero-title {
-      margin: 4px 0 6px;
-      font-size: clamp(1.5rem, 4.8vw, 2.25rem);
-      line-height: 1.25;
-    }
-
-    .hero-dates {
-      margin: 0 0 16px;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    .countdown-box {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(58px, 1fr));
-      gap: 8px;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .countdown-item {
-      background-color: var(--card-white);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-sm);
-      padding: 8px 6px;
-      box-shadow: 0 3px 0 var(--ink);
-    }
-
-    .countdown-item:nth-child(1) { background-color: var(--yellow); }
-    .countdown-item:nth-child(2) { background-color: var(--sky); }
-    .countdown-item:nth-child(3) { background-color: var(--green); }
-    .countdown-item:nth-child(4) { background-color: var(--coral); }
-
-    .countdown-num {
-      display: block;
-      font-size: 1.45rem;
-      font-weight: 700;
-      line-height: 1.15;
-    }
-
-    .countdown-label {
-      font-size: 0.8rem;
-    }
-
-    .countdown-status {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: var(--ink);
-    }
-
-    /* 航班與租車網格 */
-    .flight-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-    }
-
-    .flight-card {
-      position: relative;
-      background-color: var(--card-white);
-      border: var(--border-w) solid var(--ink);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .flight-tag {
-      display: inline-block;
-      border: 2.5px solid var(--ink);
-      border-radius: 999px;
-      padding: 2px 12px;
-      font-size: 0.85rem;
-      margin-bottom: 10px;
-    }
-
-    .flight-tag.out { background-color: var(--yellow); }
-    .flight-tag.back { background-color: var(--coral); }
-    .flight-tag.car { background-color: var(--green); }
-
-    .flight-route {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin: 6px 0 10px;
-      font-size: 1.08rem;
-      font-weight: 700;
-      flex-wrap: wrap;
-    }
-
-    .flight-meta {
-      margin: 4px 0;
-      font-size: 0.92rem;
-    }
-
-    /* 每日行程日期切換 */
-    .day-tabs {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 8px;
-      padding: 4px 2px 10px;
-    }
-
-    .day-tab {
-      min-width: 0;
-      background-color: var(--card-white);
-      color: var(--ink);
-      border: var(--border-w) solid var(--ink);
-      border-radius: var(--radius-md);
-      padding: 9px 6px;
-      font-family: inherit;
-      font-size: 0.92rem;
-      text-align: center;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
-    }
-
-    .day-tab:hover {
-      transform: translateY(-3px) scale(1.02);
-    }
-
-    .day-tab.active {
-      background-color: var(--yellow);
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 5px 0 var(--ink);
-    }
-
-    .day-tab .tab-sub {
-      display: block;
-      font-size: 0.78rem;
-      opacity: 0.85;
-    }
-
-    /* 彈跳動畫 */
-    @keyframes dayBounceIn {
-      0% {
-        opacity: 0;
-        transform: translateY(14px) scale(0.97);
-      }
-      60% {
-        opacity: 1;
-        transform: translateY(-5px) scale(1.01);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .timeline-panel {
-      animation: dayBounceIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .day-banner {
-      background-color: var(--sky);
-      border: var(--border-w) solid var(--ink);
-      border-radius: var(--radius-md);
-      padding: 12px 16px;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .day-banner h3 {
-      margin: 0;
-      font-size: 1.15rem;
-    }
-
-    /* 時間軸 */
-    .timeline {
-      position: relative;
-      padding-left: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 7px;
-      top: 10px;
-      bottom: 10px;
-      width: 4px;
-      background-color: var(--ink);
-      border-radius: 999px;
-    }
-
-    .stop-card {
-      position: relative;
-      background-color: var(--card-white);
-      border: var(--border-w) solid var(--ink);
-      border-radius: var(--radius-md);
-      padding: 15px 16px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .stop-card::before {
-      content: "";
-      position: absolute;
-      left: -22px;
-      top: 20px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background-color: var(--coral);
-      border: 3px solid var(--ink);
-    }
-
-    .stop-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .stop-title {
-      margin: 4px 0 6px;
-      font-size: 1.12rem;
-      line-height: 1.35;
-      word-break: break-word;
-    }
-
-    .stop-desc {
-      margin: 0 0 12px;
-      font-size: 0.94rem;
-      color: var(--ink);
-    }
-
-    .stop-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    /* 前一天 / 後一天按鈕靠右對齊 */
-    .day-step-nav {
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    /* 統一按鈕顏色：google map藍色、官網黃色、停車場綠色、介紹文紅色 */
-    .btn-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      text-decoration: none;
-      color: var(--ink);
-      background-color: var(--soft-sand);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-sm);
-      padding: 6px 12px;
-      font-size: 0.88rem;
-      line-height: 1.35;
-      text-align: center;
-      box-shadow: 0 3px 0 var(--ink);
-      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
-    }
-
-    .btn-link.map { background-color: var(--sky); }     /* Google Map 藍色 */
-    .btn-link.web { background-color: var(--yellow); }  /* 官方網站 黃色 */
-    .btn-link.park { background-color: var(--green); }  /* 停車場 綠色 */
-    .btn-link.intro { background-color: var(--coral); } /* 介紹文 紅色 */
-
-    .btn-link:hover,
-    .btn-link:focus-visible {
-      transform: translateY(-2px);
-      filter: brightness(0.96);
-      outline: none;
-    }
-
-    /* 住宿卡片 */
-    .hotel-box {
-      background-color: var(--soft-sand);
-      border: 2.5px dashed var(--ink);
-      border-radius: var(--radius-md);
-      padding: 12px 14px;
-      margin-top: 12px;
-      font-size: 0.92rem;
-    }
-
-    .hotel-actions {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .btn-action {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      background-color: var(--yellow);
-      color: var(--ink);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-sm);
-      padding: 8px 14px;
-      font-family: inherit;
-      font-size: 0.92rem;
-      cursor: pointer;
-      box-shadow: 0 3px 0 var(--ink);
-      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
-    }
-
-    .btn-action:hover,
-    .btn-action:focus-visible {
-      transform: translateY(-2px);
-      filter: brightness(0.96);
-      outline: none;
-    }
-
-    .btn-action.sky { background-color: var(--sky); }
-    .btn-action.green { background-color: var(--green); }
-    .btn-action.coral { background-color: var(--coral); }
-    .btn-action.soft { background-color: var(--soft-sand); }
-
-    /* 匯率與計算機上方設定列 */
-    .rate-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      background-color: var(--soft-sand);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-md);
-      padding: 10px 14px;
-      font-size: 0.9rem;
-    }
-
-    .rate-control-group {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .rate-input-inline {
-      width: 102px;
-      background-color: var(--card-white);
-      border: 2px solid var(--ink);
-      border-radius: 8px;
-      padding: 4px 8px;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .dir-toggle-group {
-      display: inline-flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .dir-btn {
-      background-color: var(--card-white);
-      color: var(--ink);
-      border: 2px solid var(--ink);
-      border-radius: 999px;
-      padding: 4px 12px;
-      font-family: inherit;
-      font-size: 0.85rem;
-      cursor: pointer;
-      box-shadow: 0 2px 0 var(--ink);
-      transition: background-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .dir-btn.active {
-      background-color: var(--yellow);
-      font-weight: 700;
-    }
-
-    /* 加減乘除百分比計算機 */
-    .math-calc-box {
-      margin-top: 12px;
-      background-color: var(--paper);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-md);
-      padding: 14px;
-    }
-
-    .math-display-wrap {
-      background-color: var(--card-white);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-sm);
-      padding: 10px 12px;
-      margin-bottom: 10px;
-      text-align: right;
-    }
-
-    .math-expr {
-      font-size: 0.85rem;
-      opacity: 0.78;
-      min-height: 20px;
-    }
-
-    .math-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      word-break: break-all;
-    }
-
-    .math-fx-line {
-      margin-top: 6px;
-      padding-top: 6px;
-      border-top: 1.5px dashed var(--ink);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
-      word-break: break-all;
-    }
-
-    .math-keypad {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 8px;
-    }
-
-    .math-key {
-      min-width: 0;
-      background-color: var(--soft-sand);
-      color: var(--ink);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-sm);
-      padding: 10px 4px;
-      font-family: inherit;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 2px 0 var(--ink);
-      transition: transform 0.15s ease, background-color 0.15s ease;
-    }
-
-    .math-key:hover {
-      background-color: var(--yellow);
-      transform: translateY(-2px);
-    }
-
-    .math-key.op { background-color: var(--sky); }
-    .math-key.fn { background-color: var(--coral); }
-    .math-key.eq { background-color: var(--green); }
-
-    /* 翻譯小幫手 */
-    .btn-mini {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      background-color: var(--card-white);
-      color: var(--ink);
-      border: 2px solid var(--ink);
-      border-radius: 10px;
-      padding: 5px 10px;
-      font-family: inherit;
-      font-size: 0.84rem;
-      cursor: pointer;
-      box-shadow: 0 2px 0 var(--ink);
-      transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .btn-mini:hover {
-      background-color: var(--yellow);
-      transform: translateY(-1px);
-    }
-
-    .custom-textarea {
-      width: 100%;
-      min-height: 120px;
-      background-color: var(--paper);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-sm);
-      padding: 10px 12px;
-      font-family: inherit;
-      font-size: 0.98rem;
-      color: var(--ink);
-      resize: vertical;
-      margin: 8px 0 12px;
-    }
-
-    .custom-textarea:focus {
-      outline: none;
-      background-color: #FFF6D6;
-    }
-
-    .translate-actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .translate-left-group {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    /* 清單頁籤與項目 */
-    .list-tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
-
-    .list-tab {
-      background-color: var(--card-white);
-      color: var(--ink);
-      border: 2.5px solid var(--ink);
-      border-radius: 999px;
-      padding: 6px 14px;
-      font-family: inherit;
-      font-size: 0.9rem;
-      cursor: pointer;
-      box-shadow: 0 2px 0 var(--ink);
-      transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-
-    .list-tab.active {
-      background-color: var(--coral);
-      transform: translateY(-2px);
-    }
-
-    .progress-bar-wrap {
-      background-color: var(--soft-sand);
-      border: 2.5px solid var(--ink);
-      border-radius: 999px;
-      height: 18px;
-      overflow: hidden;
-      margin-bottom: 12px;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      width: 0%;
-      background-color: var(--green);
-      transition: width 0.3s ease;
-    }
-
-    .add-item-row {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .add-item-input {
-      flex: 1 1 auto;
-      min-width: 0;
-      background-color: var(--paper);
-      border: 2.5px solid var(--ink);
-      border-radius: var(--radius-sm);
-      padding: 8px 12px;
-      font-family: inherit;
-      font-size: 0.95rem;
-      color: var(--ink);
-    }
-
-    .check-items {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .check-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      background-color: var(--paper);
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-sm);
-      padding: 9px 12px;
-    }
-
-    .check-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      flex: 1;
-      font-size: 0.95rem;
-      word-break: break-word;
-    }
-
-    .check-label input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      accent-color: var(--ink);
-      cursor: pointer;
-    }
-
-    .check-item.done .check-text {
-      text-decoration: line-through;
-      opacity: 0.55;
-    }
-
-    .del-btn {
-      flex-shrink: 0;
-      background: transparent;
-      border: 1.5px solid var(--ink);
-      border-radius: 8px;
-      padding: 2px 8px;
-      font-family: inherit;
-      font-size: 0.8rem;
-      color: var(--ink);
-      cursor: pointer;
-    }
-
-    .del-btn:hover {
-      background-color: var(--coral);
-    }
-
-    /* 右下角回到最上方按鈕 */
-    .back-to-top {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 150;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background-color: var(--yellow);
-      color: var(--ink);
-      border: var(--border-w) solid var(--ink);
-      box-shadow: var(--shadow-sm);
-      font-family: inherit;
-      font-size: 1.3rem;
-      font-weight: 700;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
-    }
-
-    .back-to-top:hover,
-    .back-to-top:focus-visible {
-      background-color: var(--coral);
-      transform: translateY(-4px) scale(1.06);
-      outline: none;
-    }
-
-    .toast-msg {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 300;
-      background-color: var(--ink);
-      color: var(--paper);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      max-width: 90vw;
-      text-align: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .toast-msg.show {
-      opacity: 1;
-    }
-
-    /* 繪本 SVG 輕微動態 */
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-4px); }
-    }
-
-    @keyframes cloudDrift {
-      0%, 100% { transform: translateX(0px); }
-      50% { transform: translateX(7px); }
-    }
-
-    @keyframes carBump {
-      0%, 100% { transform: translate(0px, 0px); }
-      50% { transform: translate(5px, -2px); }
-    }
-
-    .svg-cloud {
-      animation: cloudDrift 5s ease-in-out infinite;
-    }
-
-    .svg-float {
-      animation: floatSlow 3.6s ease-in-out infinite;
-    }
-
-    .svg-car {
-      animation: carBump 2.4s ease-in-out infinite;
-    }
-
-    /* 減少動態效果（系統偏好 或 手動開關） */
-    body.reduced-motion *,
-    body.reduced-motion *::before,
-    body.reduced-motion *::after {
-      animation: none !important;
-      transition: none !important;
-      scroll-behavior: auto !important;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *:not(.allow-motion),
-      *::before:not(.allow-motion),
-      *::after:not(.allow-motion) {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-    }
-
-    /* ================= RWD 響應式設計（平板 / 手機 / 小螢幕） ================= */
-    @media (max-width: 768px) {
-      .container {
-        padding: 14px 12px 0;
-      }
-
-      .card {
-        padding: 15px 14px;
-        border-radius: 22px;
-      }
-
-      .section-title {
-        font-size: 1.2rem;
-        padding: 5px 14px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .sticky-header {
-        padding: 8px 10px;
-      }
-
-      .header-inner {
-        gap: 8px;
-      }
-
-      .nav-scroll {
-        order: 3;
-        flex: 1 1 100%;
-        width: 100%;
-        padding-top: 2px;
-      }
-
-      .countdown-box {
-        gap: 6px;
-      }
-
-      .countdown-num {
-        font-size: 1.25rem;
-      }
-
-      .day-tabs {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 6px;
-      }
-
-      .day-tab {
-        padding: 8px 4px;
-        font-size: 0.86rem;
-      }
-
-      .timeline {
-        padding-left: 18px;
-      }
-
-      .timeline::before {
-        left: 5px;
-      }
-
-      .stop-card {
-        padding: 13px 12px;
-      }
-
-      .stop-card::before {
-        left: -17px;
-        width: 12px;
-        height: 12px;
-      }
-
-      .stop-actions {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .stop-actions .btn-link {
-        width: 100%;
-        padding: 7px 8px;
-        font-size: 0.84rem;
-      }
-
-      .hotel-actions {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .hotel-actions .btn-link,
-      .hotel-actions .btn-mini {
-        width: 100%;
-      }
-
-      .day-step-nav {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-        gap: 8px;
-      }
-
-      .day-step-nav .btn-action {
-        width: 100%;
-        padding: 8px 10px;
-        font-size: 0.85rem;
-      }
-
-      .rate-bar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .dir-toggle-group {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-      }
-
-      .dir-btn {
-        text-align: center;
-        padding: 6px 8px;
-      }
-
-      .math-value {
-        font-size: 1.35rem;
-      }
-
-      .math-fx-line {
-        font-size: 1.05rem;
-      }
-
-      .translate-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .translate-left-group {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .translate-actions .btn-link {
-        width: 100%;
-      }
-
-      .list-tabs {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 6px;
-      }
-
-      .list-tab {
-        padding: 6px 6px;
-        font-size: 0.82rem;
-        text-align: center;
-      }
-
-      .add-item-row {
-        flex-direction: column;
-      }
-
-      .add-item-row .btn-action {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .day-tabs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .stop-actions,
-      .hotel-actions {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- 頂端固定選單 -->
-  <header class="sticky-header">
-    <div class="header-inner">
-      <div class="brand-mini">
-        <span class="brand-dot" aria-hidden="true">🌺</span>
-        <span>2027 沖繩自駕</span>
-      </div>
-      <nav class="nav-scroll" aria-label="主要區塊導覽">
-        <a class="nav-link" href="#top">首頁</a>
-        <a class="nav-link" href="#flight-car">航班/租車</a>
-        <a class="nav-link" href="#itinerary">每日行程</a>
-        <a class="nav-link" href="#hotel">住宿</a>
-        <a class="nav-link" href="#converter">匯率計算機</a>
-        <a class="nav-link" href="#translator">快速翻譯</a>
-        <a class="nav-link" href="#checklists">準備清單</a>
-      </nav>
-      <button type="button" id="motionToggleBtn" class="motion-toggle" aria-pressed="false">
-        <span>✨ 減少動態</span>
-      </button>
-    </div>
-  </header>
-
-  <main class="container" id="top">
-    <!-- 首頁插圖＋標題＋出發倒數 -->
-    <section class="card hero-card">
-      <div class="hero-svg-wrap">
-        <svg viewBox="0 0 720 270" role="img" aria-label="沖繩日系繪本插圖：藍天大海、首里城守禮門意象、跨海大橋、Q版鯨鯊與自駕小車">
-          <rect x="0" y="0" width="720" height="168" fill="#A8D3E6" />
-          <circle cx="615" cy="54" r="28" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" />
-
-          <g class="svg-cloud">
-            <path d="M90 56 Q96 36 118 38 Q132 24 154 34 Q174 36 178 56 Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
-            <path d="M440 44 Q446 28 464 30 Q476 18 494 28 Q510 30 514 44 Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
-          </g>
-
-          <path d="M45 146 L115 92 L185 146 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
-          <rect x="215" y="102" width="110" height="44" fill="#F2A497" stroke="#3E3A39" stroke-width="3" />
-          <path d="M202 102 L270 74 L338 102 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
-          <rect x="255" y="118" width="30" height="28" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
-
-          <rect x="360" y="124" width="295" height="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
-          <line x1="415" y1="100" x2="415" y2="146" stroke="#3E3A39" stroke-width="3" />
-          <line x1="565" y1="100" x2="565" y2="146" stroke="#3E3A39" stroke-width="3" />
-          <path d="M360 124 Q415 98 470 124" fill="none" stroke="#3E3A39" stroke-width="2.5" />
-          <path d="M510 124 Q565 98 620 124" fill="none" stroke="#3E3A39" stroke-width="2.5" />
-
-          <rect x="0" y="144" width="720" height="82" fill="#78BBD9" stroke="#3E3A39" stroke-width="3" />
-          <path d="M25 166 Q45 158 65 166 T105 166" fill="none" stroke="#FFFCF6" stroke-width="3" stroke-linecap="round" />
-          <path d="M560 174 Q580 166 600 174 T640 174" fill="none" stroke="#FFFCF6" stroke-width="3" stroke-linecap="round" />
-
-          <g class="svg-float">
-            <path d="M150 166 L142 152 L162 165 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
-            <path d="M164 192 L154 206 L176 194 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
-            <path d="M104 182 C112 164, 152 160, 184 166 C202 169, 212 176, 212 183 C212 190, 200 197, 178 197 C148 197, 116 192, 104 182 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
-            <path d="M116 186 C138 186, 178 185, 209 184 C206 191, 194 195, 176 195 C148 195, 126 192, 116 186 Z" fill="#FFFCF6" />
-            <path d="M106 182 L84 166 L91 182 L84 196 Z" fill="#6F95B8" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
-            <circle cx="194" cy="177" r="3" fill="#3E3A39" />
-            <circle cx="195" cy="176" r="1" fill="#FFFCF6" />
-            <circle cx="187" cy="182" r="3.5" fill="#F2A497" />
-            <path d="M198 183 Q204 186 209 182" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round" />
-            <circle cx="144" cy="173" r="2.2" fill="#FFFCF6" />
-            <circle cx="156" cy="172" r="2.2" fill="#FFFCF6" />
-            <circle cx="168" cy="173" r="2.2" fill="#FFFCF6" />
-            <circle cx="150" cy="179" r="2" fill="#FFFCF6" />
-            <circle cx="162" cy="179" r="2" fill="#FFFCF6" />
-          </g>
-
-          <rect x="0" y="218" width="720" height="52" fill="#F7EFE0" stroke="#3E3A39" stroke-width="3" />
-          <line x1="20" y1="244" x2="700" y2="244" stroke="#3E3A39" stroke-width="3" stroke-dasharray="16 14" />
-
-          <g class="svg-car">
-            <path d="M475 234 L486 212 L538 212 L550 234 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
-            <rect x="462" y="228" width="98" height="20" rx="8" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" />
-            <rect x="492" y="216" width="18" height="12" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" />
-            <rect x="515" y="216" width="20" height="12" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" />
-            <circle cx="486" cy="248" r="10" fill="#3E3A39" stroke="#FFFCF6" stroke-width="2.5" />
-            <circle cx="538" cy="248" r="10" fill="#3E3A39" stroke="#FFFCF6" stroke-width="2.5" />
-          </g>
-        </svg>
-      </div>
-
-      <span class="hero-badge">🚗 沖繩 5 天 4 夜自駕繪本手帳</span>
-      <h1 class="hero-title">2027 沖繩新年自駕之旅</h1>
-      <p class="hero-dates">2027/01/01（五）– 2027/01/05（二）｜星宇航空 JX870 / JX871・OTS 租車</p>
-
-      <div class="countdown-box" id="countdownBox" aria-live="polite">
-        <div class="countdown-item">
-          <span class="countdown-num" id="cdDays">--</span>
-          <span class="countdown-label">天</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-num" id="cdHours">--</span>
-          <span class="countdown-label">小時</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-num" id="cdMins">--</span>
           <span class="countdown-label">分鐘</span>
         </div>
         <div class="countdown-item">
@@ -2682,6 +1458,7 @@
             name: "星宇航空 JX870（桃園 TPE → 那霸 OKA）",
             desc: "搭乘星宇航空 JX870 航班前往沖繩那霸，準備展開五天四夜的日系自駕小旅行。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Naha+Airport",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" },
@@ -2693,6 +1470,7 @@
             name: "OTS 臨空豐崎營業所（那霸機場）",
             desc: "距離那霸機場約 15 分鐘車程的大型租車據點，提供機場接駁服務，辦理取車手續相當順暢。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=OTS+%E8%87%A8%E7%A9%BA%E8%B1%90%E5%B4%8E%E7%87%9F%E6%A5%AD%E6%89%80",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" },
@@ -2704,6 +1482,7 @@
             name: "HOTEL LANTANA（那霸國際街）",
             desc: "座落於那霸市中心國際通正中央的現代化飯店，下樓即可逛街、品嚐沖繩料理與採買伴手禮，交通與生活機能極佳。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://lantana-kokusai.com" },
@@ -2724,6 +1503,7 @@
             name: "Neo Park（名護自然動植物公園）",
             desc: "採用無柵欄自然放養設計的動植物園區，可近距離觀察水豚、紅鶴、巨嘴鳥等動物，還能搭乘可愛的復古小火車遊園。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Neo+Park+Okinawa",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.neopark.co.jp/" },
@@ -2735,6 +1515,7 @@
             name: "百年古家 大家 阿古豬",
             desc: "隱身在名護山林中的百年琉球古民家餐廳，庭園瀑布景致優美，招牌為油花甘甜、入口即化的沖繩頂級「阿古豬」涮涮鍋與沖繩麵。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%99%BE%E5%B9%B4%E5%8F%A4%E5%AE%B6+%E5%A4%A7%E5%AE%B6",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://ufuya.com/" },
@@ -2746,6 +1527,7 @@
             name: "許田休息站美食區 (道の駅許田 フードコート)",
             desc: "沖繩北部人氣最高的公路休息站，集結現炸沙翁（開口笑）、豬肉蛋飯糰、苦瓜漢堡與各式當地名產，適合自駕途中下車補給。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://maps.app.goo.gl/9pamaDhrrivYp3aY6?g_st=il",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.yanbaru-b.co.jp/" },
@@ -2757,6 +1539,7 @@
             name: "PARCO CITY（浦添西海岸購物中心）",
             desc: "緊鄰浦添西海岸的沖繩大型海景購物商場，匯集超過兩百間日系服飾、雜貨與美食餐廳，傍晚還能順道欣賞療癒的夕陽海景。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=SAN-A+Urasoe+West+Coast+PARCO+CITY",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.parcocity.jp/" },
@@ -2776,6 +1559,7 @@
             name: "美麗海水族館 (駐車場 (P7))",
             desc: "沖繩必訪的世界級水族館，擁有壯觀的「黑潮之海」巨型水槽，可近距離欣賞鯨鯊與鬼蝠魟悠游；停靠立體停車場 P7 步行距離最近。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E3%82%89%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8+P7",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://churaumi.okinawa/" },
@@ -2788,6 +1572,7 @@
             name: "車老海明蝦廚房(Kurumaebi Kitchen TAMAYA)",
             desc: "位於宜野座村的車海老（斑節蝦）專賣餐廳，使用自家養殖的新鮮活蝦，現點現炸的香酥天婦羅丼飯與鹽烤大蝦鮮甜彈牙。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Kurumaebi+Kitchen+TAMAYA",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://tamayaab.com/" },
@@ -2799,6 +1584,7 @@
             name: "古宇利海洋塔 (KOURI OCEAN TOWER)",
             desc: "矗立在古宇利島高處的白色展望塔，可搭乘自動駕駛遊園車穿過熱帶花園登塔，將湛藍的「古宇利藍」大海與跨海大橋盡收眼底。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E5%8F%A4%E5%AE%87%E5%88%A9%E6%B5%B7%E6%B4%8B%E5%A1%94",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.kouri-oceantower.com/" },
@@ -2810,6 +1596,7 @@
             name: "美國村 (北谷町営駐車場/美浜駐車場)",
             desc: "前往北谷美國村最便利的大型公共停車場，停好車即可輕鬆步行逛遍充滿美式異國風情的彩色建築聚落與海濱步道。",
             mapLabel: "🅿️ 駐車場",
+            mapCls: "park",
             mapUrl: "https://maps.app.goo.gl/xVT9ZfApitsKEvrV8?g_st=il",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.okinawa-americanvillage.com/" },
@@ -2821,6 +1608,7 @@
             name: "グルメ回転寿司市場 美浜店",
             desc: "美國村超人氣的排隊迴轉壽司名店，主打沖繩近海新鮮漁獲與厚切握壽司，選擇豐富且價格實惠，深受當地人與旅客喜愛。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E3%82%B0%E3%83%AB%E3%83%A1%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%E5%B8%82%E5%A0%B4+%E7%BE%8E%E6%B5%9C%E5%BA%97",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "http://gurumekaiten.com/#tempo" },
@@ -2840,6 +1628,7 @@
             name: "首里城公園 Shurijo Castle Park (駐車場 (P2))",
             desc: "琉球王國昔日的政治與文化中心，可漫步於守禮門與城牆之間感受歷史風華，並近距離見證正殿重建工藝；停放 P2 停車場可快速抵達入口。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://maps.app.goo.gl/BwskUCNuGKx2FUWa8",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://oki-park.jp/shurijo/" },
@@ -2852,6 +1641,7 @@
             name: "達摩寺（西來院）",
             desc: "位於首里城附近的清幽古剎，以祈求學業、事業與開運的達摩不倒翁聞名，參觀後可挑選可愛的達摩御守留作紀念。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E9%81%94%E7%A3%A8%E5%AF%BA+%E9%82%A3%E9%9C%B8",
             links: [
               { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 達摩寺 西來院 那霸 介紹") }
@@ -2862,6 +1652,7 @@
             name: "Ryoshi Shokudo Obanburumai Sakana Daitoryo（漁師食堂 大盤振舞 魚大統領）",
             desc: "由漁協直營的海鮮食堂，以份量豪邁、高 CP 值的生魚片定食、海鮮丼與奶油烤魚聞名，能品嚐到最道地的漁港鮮味。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://maps.app.goo.gl/9ra5wfdNKHwrxyKW9",
             links: [
               { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 漁師食堂 大盤振舞 魚大統領 食記 介紹") }
@@ -2872,6 +1663,7 @@
             name: "沖繩世界文化王國・玉泉洞",
             desc: "集結歷經三十萬年歲月形成的壯觀鐘乳石洞「玉泉洞」、琉球古民家聚落與震撼力十足的傳統太鼓舞表演，一次體驗沖繩自然與文化魅力。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B8%84%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89+%E7%8E%89%E6%B3%89%E6%B4%9E",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.gyokusendo.co.jp/okinawaworld/" },
@@ -2891,6 +1683,7 @@
             name: "波上宮",
             desc: "建在懸崖礁石上、俯瞰大海的「琉球八社」之首，擁有獨特的紅瓦本殿與海景鳥居，也是旅程最後一天祈求平安與購買書包御守的熱門神社。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E4%B8%8A%E5%AE%AE",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://naminouegu.jp/" },
@@ -2902,6 +1695,7 @@
             name: "Happy Pancake 幸福鬆餅（瀨長島）",
             desc: "位於白色希臘風海景聚落「瀨長島」的人氣舒芙蕾鬆餅店，口感蓬鬆綿密，邊享用甜點還能邊看無敵海景與飛機起降。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%81%82%E3%82%8F%E3%81%9B%E3%81%AE%E3%83%91%E3%83%B3%E3%82%B1%E3%83%BC%E3%82%AD+%E7%80%AC%E9%95%B7%E5%B3%B6",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://magia.tokyo/" },
@@ -2913,6 +1707,7 @@
             name: "OTS 臨空豐崎營業所（那霸機場）",
             desc: "旅程尾聲在此辦理車輛歸還手續，附近即有加油站方便加滿油還車，完成後可搭乘接駁巴士輕鬆前往那霸機場辦理登機。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=OTS+%E8%87%A8%E7%A9%BA%E8%B1%90%E5%B4%8E%E7%87%9F%E6%A5%AD%E6%89%80",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" },
@@ -2924,6 +1719,7 @@
             name: "星宇航空 JX871（那霸 OKA → 桃園 TPE）",
             desc: "搭乘星宇航空 JX871 返程，帶著滿滿的沖繩海景與美食回憶平安回家。",
             mapLabel: "📍 Google 地圖",
+            mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Naha+Airport",
             links: [
               { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" },
@@ -2980,7 +1776,7 @@
             <h4 class="stop-title">${stop.name}</h4>
             <p class="stop-desc">${stop.desc}</p>
             <div class="stop-actions">
-              <a class="btn-link map" href="${stop.mapUrl}" target="_blank" rel="noopener noreferrer">${stop.mapLabel || "📍 Google 地圖"}</a>
+              <a class="btn-link ${stop.mapCls || "map"}" href="${stop.mapUrl}" target="_blank" rel="noopener noreferrer">${stop.mapLabel || "📍 Google 地圖"}</a>
               ${extraBtns}
             </div>
           </article>
@@ -3045,7 +1841,7 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // 4. 自訂匯率＋加減乘除百分比計算機（預設 0.21，上下皆直接顯示幣別）
+    // 4. 自訂匯率＋加減乘除百分比計算機（預設 0.21，上下字體一致，千位分位逗號）
     const DEFAULT_RATE = 0.21;
     const RATE_STORAGE_KEY = "okinawa2027_jpy_rate_v2";
     const customRateInput = document.getElementById("customRateInput");
@@ -3074,11 +1870,27 @@
       return (!Number.isNaN(r) && r > 0) ? r : DEFAULT_RATE;
     }
 
+    function addCommasToNumericString(str) {
+      if (!str || str === "錯誤") return str;
+      const neg = str.startsWith("-");
+      const unsigned = neg ? str.slice(1) : str;
+      const [intPart, decPart] = unsigned.split(".");
+      const formattedInt = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return (neg ? "-" : "") + formattedInt + (decPart !== undefined ? `.${decPart}` : "");
+    }
+
+    function formatFixedWithCommas(num, decimals) {
+      if (!Number.isFinite(num)) return "—";
+      const [intPart, decPart] = num.toFixed(decimals).split(".");
+      const formattedInt = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return decPart !== undefined ? `${formattedInt}.${decPart}` : formattedInt;
+    }
+
     function updateFxPreview() {
       const inUnit = fxDirection === "jpyToTwd" ? "日圓" : "台幣";
       const outUnit = fxDirection === "jpyToTwd" ? "台幣" : "日圓";
 
-      mathDisplayEl.textContent = `${mCurrent} ${inUnit}`;
+      mathDisplayEl.textContent = `${addCommasToNumericString(mCurrent)} ${inUnit}`;
 
       const val = parseFloat(mCurrent);
       const rate = getRate();
@@ -3087,10 +1899,10 @@
         return;
       }
       if (fxDirection === "jpyToTwd") {
-        const twd = (val * rate).toFixed(2);
+        const twd = formatFixedWithCommas(val * rate, 2);
         mathFxLineEl.textContent = `${twd} 台幣`;
       } else {
-        const jpy = Math.round(val / rate);
+        const jpy = formatFixedWithCommas(Math.round(val / rate), 0);
         mathFxLineEl.textContent = `${jpy} 日圓`;
       }
     }
@@ -3128,7 +1940,7 @@
 
     function renderMathScreen() {
       mathExprEl.textContent = (mPrev !== null && mOp)
-        ? `${formatMathNum(mPrev)} ${OP_SYMBOLS[mOp] || mOp}`
+        ? `${addCommasToNumericString(formatMathNum(mPrev))} ${OP_SYMBOLS[mOp] || mOp}`
         : "";
       updateFxPreview();
     }
@@ -3199,7 +2011,7 @@
           if (mPrev === null || !mOp) return;
           const cur = parseFloat(mCurrent);
           const res = computeBinary(mPrev, cur, mOp);
-          mathExprEl.textContent = `${formatMathNum(mPrev)} ${OP_SYMBOLS[mOp]} ${formatMathNum(cur)} =`;
+          mathExprEl.textContent = `${addCommasToNumericString(formatMathNum(mPrev))} ${OP_SYMBOLS[mOp]} ${addCommasToNumericString(formatMathNum(cur))} =`;
           mCurrent = formatMathNum(res);
           mPrev = null;
           mOp = null;
