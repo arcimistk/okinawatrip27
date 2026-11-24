@@ -55,7 +55,7 @@
     }
 
     .header-inner {
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -141,7 +141,7 @@
     }
 
     .container {
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto;
       padding: 18px 14px 0;
     }
@@ -194,7 +194,7 @@
 
     .hero-svg-wrap {
       width: 100%;
-      max-width: 660px;
+      max-width: 680px;
       margin: 0 auto 14px;
       background-color: var(--sky);
       border: var(--border-w) solid var(--ink);
@@ -222,7 +222,7 @@
 
     .hero-title {
       margin: 4px 0 6px;
-      font-size: clamp(1.6rem, 4.8vw, 2.25rem);
+      font-size: clamp(1.5rem, 4.8vw, 2.25rem);
       line-height: 1.25;
     }
 
@@ -234,7 +234,7 @@
 
     .countdown-box {
       display: grid;
-      grid-template-columns: repeat(4, minmax(60px, 1fr));
+      grid-template-columns: repeat(4, minmax(58px, 1fr));
       gap: 8px;
       max-width: 500px;
       margin: 0 auto;
@@ -273,7 +273,7 @@
     /* 航班與租車網格 */
     .flight-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 14px;
     }
 
@@ -305,8 +305,9 @@
       justify-content: space-between;
       gap: 8px;
       margin: 6px 0 10px;
-      font-size: 1.12rem;
+      font-size: 1.08rem;
       font-weight: 700;
+      flex-wrap: wrap;
     }
 
     .flight-meta {
@@ -316,25 +317,19 @@
 
     /* 每日行程日期切換 */
     .day-tabs {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 8px;
-      overflow-x: auto;
       padding: 4px 2px 10px;
-      scrollbar-width: none;
-    }
-
-    .day-tabs::-webkit-scrollbar {
-      display: none;
     }
 
     .day-tab {
-      flex: 1 0 auto;
-      min-width: 112px;
+      min-width: 0;
       background-color: var(--card-white);
       color: var(--ink);
       border: var(--border-w) solid var(--ink);
       border-radius: var(--radius-md);
-      padding: 9px 12px;
+      padding: 9px 6px;
       font-family: inherit;
       font-size: 0.92rem;
       text-align: center;
@@ -349,7 +344,7 @@
 
     .day-tab.active {
       background-color: var(--yellow);
-      transform: translateY(-4px) scale(1.04);
+      transform: translateY(-4px) scale(1.03);
       box-shadow: 0 5px 0 var(--ink);
     }
 
@@ -452,6 +447,7 @@
       margin: 4px 0 6px;
       font-size: 1.12rem;
       line-height: 1.35;
+      word-break: break-word;
     }
 
     .stop-desc {
@@ -476,9 +472,11 @@
       flex-wrap: wrap;
     }
 
+    /* 統一按鈕顏色：google map藍色、官網黃色、停車場綠色、介紹文紅色 */
     .btn-link {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 5px;
       text-decoration: none;
       color: var(--ink);
@@ -487,18 +485,21 @@
       border-radius: var(--radius-sm);
       padding: 6px 12px;
       font-size: 0.88rem;
+      line-height: 1.35;
+      text-align: center;
       box-shadow: 0 3px 0 var(--ink);
-      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
     }
 
-    .btn-link.map { background-color: var(--sky); }
-    .btn-link.web { background-color: var(--yellow); }
-    .btn-link.park { background-color: var(--green); }
+    .btn-link.map { background-color: var(--sky); }     /* Google Map 藍色 */
+    .btn-link.web { background-color: var(--yellow); }  /* 官方網站 黃色 */
+    .btn-link.park { background-color: var(--green); }  /* 停車場 綠色 */
+    .btn-link.intro { background-color: var(--coral); } /* 介紹文 紅色 */
 
     .btn-link:hover,
     .btn-link:focus-visible {
       transform: translateY(-2px);
-      background-color: var(--coral);
+      filter: brightness(0.96);
       outline: none;
     }
 
@@ -510,6 +511,13 @@
       padding: 12px 14px;
       margin-top: 12px;
       font-size: 0.92rem;
+    }
+
+    .hotel-actions {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .btn-action {
@@ -526,13 +534,13 @@
       font-size: 0.92rem;
       cursor: pointer;
       box-shadow: 0 3px 0 var(--ink);
-      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
     }
 
     .btn-action:hover,
     .btn-action:focus-visible {
       transform: translateY(-2px);
-      background-color: var(--coral);
+      filter: brightness(0.96);
       outline: none;
     }
 
@@ -555,8 +563,15 @@
       font-size: 0.9rem;
     }
 
+    .rate-control-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
     .rate-input-inline {
-      width: 105px;
+      width: 102px;
       background-color: var(--card-white);
       border: 2px solid var(--ink);
       border-radius: 8px;
@@ -616,7 +631,7 @@
     }
 
     .math-value {
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       font-weight: 700;
       word-break: break-all;
     }
@@ -625,23 +640,25 @@
       margin-top: 6px;
       padding-top: 6px;
       border-top: 1.5px dashed var(--ink);
-      font-size: 0.98rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--ink);
+      word-break: break-all;
     }
 
     .math-keypad {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 8px;
     }
 
     .math-key {
+      min-width: 0;
       background-color: var(--soft-sand);
       color: var(--ink);
       border: 2.5px solid var(--ink);
       border-radius: var(--radius-sm);
-      padding: 9px 6px;
+      padding: 10px 4px;
       font-family: inherit;
       font-size: 1rem;
       font-weight: 700;
@@ -661,13 +678,17 @@
 
     /* 翻譯小幫手 */
     .btn-mini {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
       background-color: var(--card-white);
       color: var(--ink);
       border: 2px solid var(--ink);
       border-radius: 10px;
-      padding: 4px 10px;
+      padding: 5px 10px;
       font-family: inherit;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       cursor: pointer;
       box-shadow: 0 2px 0 var(--ink);
       transition: background-color 0.2s ease, transform 0.2s ease;
@@ -680,7 +701,7 @@
 
     .custom-textarea {
       width: 100%;
-      min-height: 130px;
+      min-height: 120px;
       background-color: var(--paper);
       border: 2.5px solid var(--ink);
       border-radius: var(--radius-sm);
@@ -761,7 +782,8 @@
     }
 
     .add-item-input {
-      flex: 1;
+      flex: 1 1 auto;
+      min-width: 0;
       background-color: var(--paper);
       border: 2.5px solid var(--ink);
       border-radius: var(--radius-sm);
@@ -798,11 +820,13 @@
       cursor: pointer;
       flex: 1;
       font-size: 0.95rem;
+      word-break: break-word;
     }
 
     .check-label input[type="checkbox"] {
       width: 20px;
       height: 20px;
+      flex-shrink: 0;
       accent-color: var(--ink);
       cursor: pointer;
     }
@@ -813,6 +837,7 @@
     }
 
     .del-btn {
+      flex-shrink: 0;
       background: transparent;
       border: 1.5px solid var(--ink);
       border-radius: 8px;
@@ -830,18 +855,18 @@
     /* 右下角回到最上方按鈕 */
     .back-to-top {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
+      right: 16px;
+      bottom: 16px;
       z-index: 150;
-      width: 48px;
-      height: 48px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       background-color: var(--yellow);
       color: var(--ink);
       border: var(--border-w) solid var(--ink);
       box-shadow: var(--shadow-sm);
       font-family: inherit;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       display: grid;
       place-items: center;
@@ -867,6 +892,8 @@
       padding: 8px 16px;
       border-radius: 999px;
       font-size: 0.88rem;
+      max-width: 90vw;
+      text-align: center;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.25s ease;
@@ -920,6 +947,180 @@
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;
+      }
+    }
+
+    /* ================= RWD 響應式設計（平板 / 手機 / 小螢幕） ================= */
+    @media (max-width: 768px) {
+      .container {
+        padding: 14px 12px 0;
+      }
+
+      .card {
+        padding: 15px 14px;
+        border-radius: 22px;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+        padding: 5px 14px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sticky-header {
+        padding: 8px 10px;
+      }
+
+      .header-inner {
+        gap: 8px;
+      }
+
+      .nav-scroll {
+        order: 3;
+        flex: 1 1 100%;
+        width: 100%;
+        padding-top: 2px;
+      }
+
+      .countdown-box {
+        gap: 6px;
+      }
+
+      .countdown-num {
+        font-size: 1.25rem;
+      }
+
+      .day-tabs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .day-tab {
+        padding: 8px 4px;
+        font-size: 0.86rem;
+      }
+
+      .timeline {
+        padding-left: 18px;
+      }
+
+      .timeline::before {
+        left: 5px;
+      }
+
+      .stop-card {
+        padding: 13px 12px;
+      }
+
+      .stop-card::before {
+        left: -17px;
+        width: 12px;
+        height: 12px;
+      }
+
+      .stop-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .stop-actions .btn-link {
+        width: 100%;
+        padding: 7px 8px;
+        font-size: 0.84rem;
+      }
+
+      .hotel-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .hotel-actions .btn-link,
+      .hotel-actions .btn-mini {
+        width: 100%;
+      }
+
+      .day-step-nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 8px;
+      }
+
+      .day-step-nav .btn-action {
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+      }
+
+      .rate-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .dir-toggle-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+
+      .dir-btn {
+        text-align: center;
+        padding: 6px 8px;
+      }
+
+      .math-value {
+        font-size: 1.35rem;
+      }
+
+      .math-fx-line {
+        font-size: 1.05rem;
+      }
+
+      .translate-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .translate-left-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .translate-actions .btn-link {
+        width: 100%;
+      }
+
+      .list-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .list-tab {
+        padding: 6px 6px;
+        font-size: 0.82rem;
+        text-align: center;
+      }
+
+      .add-item-row {
+        flex-direction: column;
+      }
+
+      .add-item-row .btn-action {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .day-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stop-actions,
+      .hotel-actions {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -1091,9 +1292,11 @@
         <p style="margin: 0;">座落於那霸市中心國際通周邊，晚上逛街、吃消夜與採買伴手禮都很方便。</p>
         <div class="hotel-box">
           <div><strong>📍 地址關鍵字：</strong>HOTEL LANTANA 那霸國際街</div>
-          <div style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px;">
+          <div class="hotel-actions">
             <a class="btn-link map" href="https://www.google.com/maps/search/?api=1&query=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97" target="_blank" rel="noopener noreferrer">📍 Google 地圖</a>
             <a class="btn-link web" href="https://lantana-kokusai.com" target="_blank" rel="noopener noreferrer">🌐 官方網站</a>
+            <a class="btn-link intro" href="https://www.google.com/search?q=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97+%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener noreferrer">📖 介紹文</a>
+            <a class="btn-link intro" href="https://www.google.com/search?q=%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97+%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener noreferrer">📖 那霸國際街介紹</a>
             <button type="button" class="btn-mini" onclick="copyText('HOTEL LANTANA（那霸國際街）')">📋 複製飯店名稱</button>
           </div>
         </div>
@@ -1107,10 +1310,10 @@
       </div>
       <div class="card">
         <div class="rate-bar">
-          <div>
+          <div class="rate-control-group">
             <label for="customRateInput"><strong>自訂匯率（1 JPY = ? TWD）：</strong></label>
-            <input type="number" id="customRateInput" class="rate-input-inline" min="0.0001" step="0.0001" value="0.2068" />
-            <button type="button" id="resetRateBtn" class="btn-mini" style="margin-left: 6px;">↺ 重設 (0.2068)</button>
+            <input type="number" id="customRateInput" class="rate-input-inline" min="0.0001" step="0.0001" value="0.21" />
+            <button type="button" id="resetRateBtn" class="btn-mini">↺ 重設 (0.21)</button>
           </div>
           <div class="dir-toggle-group" role="group" aria-label="切換換算方向">
             <button type="button" class="dir-btn active" id="dirJpyToTwdBtn">日幣 → 台幣</button>
@@ -1121,8 +1324,8 @@
         <div class="math-calc-box" aria-label="加減乘除百分比與匯率計算機">
           <div class="math-display-wrap">
             <div class="math-expr" id="mathExpr"></div>
-            <div class="math-value" id="mathDisplay">0</div>
-            <div class="math-fx-line" id="mathFxLine">輸入 0 日圓 → 約 0.00 台幣</div>
+            <div class="math-value" id="mathDisplay">0 日圓</div>
+            <div class="math-fx-line" id="mathFxLine">0.00 台幣</div>
           </div>
 
           <div class="math-keypad">
@@ -1185,7 +1388,7 @@
           <button type="button" class="list-tab" data-list="packing">🧳 行李清單</button>
         </div>
 
-        <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 0.88rem; margin-bottom: 6px;">
           <span id="listProgressText">已完成 0 / 0 項</span>
           <button type="button" id="resetCurrentListBtn" class="btn-mini">↺ 還原此清單預設</button>
         </div>
@@ -1209,7 +1412,12 @@
   <div class="toast-msg" id="toastMsg" role="status" aria-live="polite"></div>
 
   <script>
-    // 1. 行程資料
+    // 輔助：產生 Google 搜尋結果連結
+    function buildGoogleSearchUrl(keyword) {
+      return `https://www.google.com/search?q=${encodeURIComponent(keyword)}`;
+    }
+
+    // 1. 行程資料（按鈕樣式統一：map=藍色, web=黃色, park=綠色, intro=紅色）
     const TRIP_DAYS = [
       {
         id: "day1",
@@ -1221,27 +1429,34 @@
             time: "11:40 – 14:15",
             name: "星宇航空 JX870（桃園 TPE → 那霸 OKA）",
             desc: "搭乘星宇航空 JX870 航班前往沖繩那霸，準備展開五天四夜的日系自駕小旅行。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Naha+Airport",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("星宇航空 JX870 沖繩 搭乘體驗 介紹") }
             ]
           },
           {
             time: "抵達後",
             name: "OTS 臨空豐崎營業所（那霸機場）",
             desc: "距離那霸機場約 15 分鐘車程的大型租車據點，提供機場接駁服務，辦理取車手續相當順暢。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=OTS+%E8%87%A8%E7%A9%BA%E8%B1%90%E5%B4%8E%E7%87%9F%E6%A5%AD%E6%89%80",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 OTS 臨空豐崎營業所 租車 介紹") }
             ]
           },
           {
             time: "傍晚入住",
             name: "HOTEL LANTANA（那霸國際街）",
             desc: "座落於那霸市中心國際通正中央的現代化飯店，下樓即可逛街、品嚐沖繩料理與採買伴手禮，交通與生活機能極佳。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://lantana-kokusai.com" }
+              { label: "🌐 官方網站", cls: "web", url: "https://lantana-kokusai.com" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("HOTEL LANTANA 那霸國際街 住宿 介紹") },
+              { label: "📖 那霸國際街介紹", cls: "intro", url: buildGoogleSearchUrl("那霸國際街 逛街 美食 介紹") }
             ]
           }
         ]
@@ -1256,36 +1471,44 @@
             time: "上午",
             name: "Neo Park（名護自然動植物公園）",
             desc: "採用無柵欄自然放養設計的動植物園區，可近距離觀察水豚、紅鶴、巨嘴鳥等動物，還能搭乘可愛的復古小火車遊園。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Neo+Park+Okinawa",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.neopark.co.jp/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.neopark.co.jp/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 Neo Park 名護自然動植物公園 介紹") }
             ]
           },
           {
             time: "午餐",
             name: "百年古家 大家 阿古豬",
             desc: "隱身在名護山林中的百年琉球古民家餐廳，庭園瀑布景致優美，招牌為油花甘甜、入口即化的沖繩頂級「阿古豬」涮涮鍋與沖繩麵。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%99%BE%E5%B9%B4%E5%8F%A4%E5%AE%B6+%E5%A4%A7%E5%AE%B6",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://ufuya.com/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://ufuya.com/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 百年古家 大家 阿古豬 食記 介紹") }
             ]
           },
           {
             time: "午後補給",
-            name: "道の駅許田 フードコート（許田休息站美食區）",
+            name: "許田休息站美食區 (道の駅許田 フードコート)",
             desc: "沖繩北部人氣最高的公路休息站，集結現炸沙翁（開口笑）、豬肉蛋飯糰、苦瓜漢堡與各式當地名產，適合自駕途中下車補給。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://maps.app.goo.gl/9pamaDhrrivYp3aY6?g_st=il",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://okinawa.letsgojp.com/archives/899306/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.yanbaru-b.co.jp/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 許田休息站美食區 道の駅許田 介紹") }
             ]
           },
           {
             time: "購物時段",
             name: "PARCO CITY（浦添西海岸購物中心）",
             desc: "緊鄰浦添西海岸的沖繩大型海景購物商場，匯集超過兩百間日系服飾、雜貨與美食餐廳，傍晚還能順道欣賞療癒的夕陽海景。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=SAN-A+Urasoe+West+Coast+PARCO+CITY",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.parcocity.jp/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.parcocity.jp/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 PARCO CITY 浦添西海岸購物中心 逛街 介紹") }
             ]
           }
         ]
@@ -1298,48 +1521,58 @@
         stops: [
           {
             time: "上午",
-            name: "美ら海水族館 駐車場（P7）",
+            name: "美麗海水族館 (駐車場 (P7))",
             desc: "沖繩必訪的世界級水族館，擁有壯觀的「黑潮之海」巨型水槽，可近距離欣賞鯨鯊與鬼蝠魟悠游；停靠立體停車場 P7 步行距離最近。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E3%82%89%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8+P7",
             links: [
-              { label: "🌐 水族館官網", cls: "web", url: "https://churaumi.okinawa/" },
-              { label: "🅿️ 停車場 (P7)", cls: "park", url: "https://oki-park.jp/kaiyohaku/acc/88" }
+              { label: "🌐 官方網站", cls: "web", url: "https://churaumi.okinawa/" },
+              { label: "🅿️ 駐車場 (P7)", cls: "park", url: "https://oki-park.jp/kaiyohaku/acc/88" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 美麗海水族館 P7停車場 攻略 介紹") }
             ]
           },
           {
             time: "午餐",
-            name: "Kurumaebi Kitchen TAMAYA（車海老廚房 TAMAYA）",
+            name: "車老海明蝦廚房(Kurumaebi Kitchen TAMAYA)",
             desc: "位於宜野座村的車海老（斑節蝦）專賣餐廳，使用自家養殖的新鮮活蝦，現點現炸的香酥天婦羅丼飯與鹽烤大蝦鮮甜彈牙。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Kurumaebi+Kitchen+TAMAYA",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://tamayaab.com/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://tamayaab.com/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 車老海明蝦廚房 Kurumaebi Kitchen TAMAYA 食記 介紹") }
             ]
           },
           {
             time: "下午",
             name: "古宇利海洋塔 (KOURI OCEAN TOWER)",
             desc: "矗立在古宇利島高處的白色展望塔，可搭乘自動駕駛遊園車穿過熱帶花園登塔，將湛藍的「古宇利藍」大海與跨海大橋盡收眼底。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E5%8F%A4%E5%AE%87%E5%88%A9%E6%B5%B7%E6%B4%8B%E5%A1%94",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.kouri-oceantower.com/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.kouri-oceantower.com/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 古宇利海洋塔 KOURI OCEAN TOWER 介紹") }
             ]
           },
           {
             time: "傍晚停車",
             name: "美國村 (北谷町営駐車場/美浜駐車場)",
             desc: "前往北谷美國村最便利的大型公共停車場，停好車即可輕鬆步行逛遍充滿美式異國風情的彩色建築聚落與海濱步道。",
+            mapLabel: "🅿️ 駐車場",
             mapUrl: "https://maps.app.goo.gl/xVT9ZfApitsKEvrV8?g_st=il",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.okinawa-americanvillage.com/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.okinawa-americanvillage.com/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 美國村 北谷町營停車場 逛街 介紹") }
             ]
           },
           {
             time: "晚餐",
             name: "グルメ回転寿司市場 美浜店",
             desc: "美國村超人氣的排隊迴轉壽司名店，主打沖繩近海新鮮漁獲與厚切握壽司，選擇豐富且價格實惠，深受當地人與旅客喜愛。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E3%82%B0%E3%83%AB%E3%83%A1%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%E5%B8%82%E5%A0%B4+%E7%BE%8E%E6%B5%9C%E5%BA%97",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "http://gurumekaiten.com/#tempo" }
+              { label: "🌐 官方網站", cls: "web", url: "http://gurumekaiten.com/#tempo" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 グルメ回転寿司市場 美浜店 美國村迴轉壽司 介紹") }
             ]
           }
         ]
@@ -1352,38 +1585,45 @@
         stops: [
           {
             time: "上午",
-            name: "Shurijo Castle Park Public Parking Space P2（首里城公園停車場）",
+            name: "首里城公園 Shurijo Castle Park (駐車場 (P2))",
             desc: "琉球王國昔日的政治與文化中心，可漫步於守禮門與城牆之間感受歷史風華，並近距離見證正殿重建工藝；停放 P2 停車場可快速抵達入口。",
-            mapUrl: "https://www.google.com/maps?cid=16951007728708356968",
+            mapLabel: "📍 Google 地圖",
+            mapUrl: "https://maps.app.goo.gl/BwskUCNuGKx2FUWa8",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://oki-park.jp/shurijo/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://oki-park.jp/shurijo/" },
+              { label: "🅿️ 駐車場 (P2)", cls: "park", url: "https://www.google.com/maps?cid=16951007728708356968" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 首里城公園 守禮門 介紹") }
             ]
           },
           {
             time: "參觀",
             name: "達摩寺（西來院）",
             desc: "位於首里城附近的清幽古剎，以祈求學業、事業與開運的達摩不倒翁聞名，參觀後可挑選可愛的達摩御守留作紀念。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E9%81%94%E7%A3%A8%E5%AF%BA+%E9%82%A3%E9%9C%B8",
             links: [
-              { label: "📖 介紹文", cls: "web", url: "https://boo2k.com/okinawa-daruma-temple/" }
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 達摩寺 西來院 那霸 介紹") }
             ]
           },
           {
             time: "午餐",
             name: "Ryoshi Shokudo Obanburumai Sakana Daitoryo（漁師食堂 大盤振舞 魚大統領）",
             desc: "由漁協直營的海鮮食堂，以份量豪邁、高 CP 值的生魚片定食、海鮮丼與奶油烤魚聞名，能品嚐到最道地的漁港鮮味。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://maps.app.goo.gl/9ra5wfdNKHwrxyKW9",
             links: [
-              { label: "📖 介紹文", cls: "web", url: "https://plumpyblog.com/ryoshi-shokudo/" }
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 漁師食堂 大盤振舞 魚大統領 食記 介紹") }
             ]
           },
           {
             time: "下午",
             name: "沖繩世界文化王國・玉泉洞",
             desc: "集結歷經三十萬年歲月形成的壯觀鐘乳石洞「玉泉洞」、琉球古民家聚落與震撼力十足的傳統太鼓舞表演，一次體驗沖繩自然與文化魅力。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B8%84%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89+%E7%8E%89%E6%B3%89%E6%B4%9E",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.gyokusendo.co.jp/okinawaworld/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.gyokusendo.co.jp/okinawaworld/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩世界文化王國 玉泉洞 太鼓舞 介紹") }
             ]
           }
         ]
@@ -1398,36 +1638,44 @@
             time: "上午",
             name: "波上宮",
             desc: "建在懸崖礁石上、俯瞰大海的「琉球八社」之首，擁有獨特的紅瓦本殿與海景鳥居，也是旅程最後一天祈求平安與購買書包御守的熱門神社。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E4%B8%8A%E5%AE%AE",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://naminouegu.jp/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://naminouegu.jp/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 波上宮 御守 參拜 介紹") }
             ]
           },
           {
             time: "下午茶",
             name: "Happy Pancake 幸福鬆餅（瀨長島）",
             desc: "位於白色希臘風海景聚落「瀨長島」的人氣舒芙蕾鬆餅店，口感蓬鬆綿密，邊享用甜點還能邊看無敵海景與飛機起降。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%81%82%E3%82%8F%E3%81%9B%E3%81%AE%E3%83%91%E3%83%B3%E3%82%B1%E3%83%BC%E3%82%AD+%E7%80%AC%E9%95%B7%E5%B3%B6",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://magia.tokyo/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://magia.tokyo/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 瀨長島 Happy Pancake 幸福鬆餅 介紹") }
             ]
           },
           {
             time: "還車",
             name: "OTS 臨空豐崎營業所（那霸機場）",
             desc: "旅程尾聲在此辦理車輛歸還手續，附近即有加油站方便加滿油還車，完成後可搭乘接駁巴士輕鬆前往那霸機場辦理登機。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=OTS+%E8%87%A8%E7%A9%BA%E8%B1%90%E5%B4%8E%E7%87%9F%E6%A5%AD%E6%89%80",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 OTS 臨空豐崎營業所 還車 加油 介紹") }
             ]
           },
           {
             time: "15:25 – 16:10",
             name: "星宇航空 JX871（那霸 OKA → 桃園 TPE）",
             desc: "搭乘星宇航空 JX871 返程，帶著滿滿的沖繩海景與美食回憶平安回家。",
+            mapLabel: "📍 Google 地圖",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Naha+Airport",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" }
+              { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" },
+              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("那霸機場 伴手禮 免稅店 星宇航空 JX871 介紹") }
             ]
           }
         ]
@@ -1480,7 +1728,7 @@
             <h4 class="stop-title">${stop.name}</h4>
             <p class="stop-desc">${stop.desc}</p>
             <div class="stop-actions">
-              <a class="btn-link map" href="${stop.mapUrl}" target="_blank" rel="noopener noreferrer">📍 Google 地圖</a>
+              <a class="btn-link map" href="${stop.mapUrl}" target="_blank" rel="noopener noreferrer">${stop.mapLabel || "📍 Google 地圖"}</a>
               ${extraBtns}
             </div>
           </article>
@@ -1545,9 +1793,9 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // 4. 自訂匯率＋加減乘除百分比計算機
-    const DEFAULT_RATE = 0.2068;
-    const RATE_STORAGE_KEY = "okinawa2027_jpy_rate";
+    // 4. 自訂匯率＋加減乘除百分比計算機（預設 0.21，上下皆直接顯示幣別）
+    const DEFAULT_RATE = 0.21;
+    const RATE_STORAGE_KEY = "okinawa2027_jpy_rate_v2";
     const customRateInput = document.getElementById("customRateInput");
     const resetRateBtn = document.getElementById("resetRateBtn");
     const dirJpyToTwdBtn = document.getElementById("dirJpyToTwdBtn");
@@ -1575,18 +1823,23 @@
     }
 
     function updateFxPreview() {
+      const inUnit = fxDirection === "jpyToTwd" ? "日圓" : "台幣";
+      const outUnit = fxDirection === "jpyToTwd" ? "台幣" : "日圓";
+
+      mathDisplayEl.textContent = `${mCurrent} ${inUnit}`;
+
       const val = parseFloat(mCurrent);
       const rate = getRate();
       if (Number.isNaN(val) || !Number.isFinite(val)) {
-        mathFxLineEl.textContent = "—";
+        mathFxLineEl.textContent = `— ${outUnit}`;
         return;
       }
       if (fxDirection === "jpyToTwd") {
         const twd = (val * rate).toFixed(2);
-        mathFxLineEl.textContent = `輸入 ${val} 日圓 → 約 ${twd} 台幣`;
+        mathFxLineEl.textContent = `${twd} 台幣`;
       } else {
         const jpy = Math.round(val / rate);
-        mathFxLineEl.textContent = `輸入 ${val} 台幣 → 約 ${jpy} 日圓`;
+        mathFxLineEl.textContent = `${jpy} 日圓`;
       }
     }
 
@@ -1612,7 +1865,7 @@
       customRateInput.value = DEFAULT_RATE;
       localStorage.setItem(RATE_STORAGE_KEY, String(DEFAULT_RATE));
       updateFxPreview();
-      showToast("已重設為預設匯率 0.2068");
+      showToast("已重設為預設匯率 0.21");
     });
 
     function formatMathNum(num) {
@@ -1622,7 +1875,6 @@
     }
 
     function renderMathScreen() {
-      mathDisplayEl.textContent = mCurrent;
       mathExprEl.textContent = (mPrev !== null && mOp)
         ? `${formatMathNum(mPrev)} ${OP_SYMBOLS[mOp] || mOp}`
         : "";
@@ -1700,7 +1952,6 @@
           mPrev = null;
           mOp = null;
           mResetNext = true;
-          mathDisplayEl.textContent = mCurrent;
           updateFxPreview();
           return;
         }
@@ -1893,6 +2144,17 @@
       const isNowReduced = !document.body.classList.contains("reduced-motion");
       applyReducedMotion(isNowReduced);
       showToast(isNowReduced ? "已開啟減少動態效果" : "已恢復繪本動態效果");
+    });
+
+    // 9. 確保所有外部連結（官網、介紹文、Google 地圖、Google 翻譯）皆另開新分頁
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a[href]");
+      if (!link) return;
+      const href = link.getAttribute("href");
+      if (href && !href.startsWith("#")) {
+        e.preventDefault();
+        window.open(link.href, "_blank", "noopener,noreferrer");
+      }
     });
 
     // 工具函式
