@@ -44,24 +44,30 @@
       overflow-x: hidden;
     }
 
-    /* 頂端固定選單 */
+    /* 頂端固定選單（雙排 RWD） */
     .sticky-header {
       position: sticky;
       top: 0;
       z-index: 100;
       background-color: var(--paper);
       border-bottom: var(--border-w) solid var(--ink);
-      padding: 10px 14px;
+      padding: 8px 14px 10px;
     }
 
     .header-inner {
       max-width: 820px;
       margin: 0 auto;
       display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .header-row-top {
+      display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 8px;
       min-width: 0;
     }
 
@@ -86,21 +92,33 @@
       font-size: 0.9rem;
     }
 
-    .nav-scroll {
+    .nav-row-primary {
       display: flex;
       align-items: center;
       gap: 6px;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 2px 2px 4px;
-      flex: 1 1 220px;
+      padding: 1px 2px 3px;
+      flex: 1 1 auto;
       min-width: 0;
-      max-width: 100%;
     }
 
-    .nav-scroll::-webkit-scrollbar {
+    .nav-row-primary::-webkit-scrollbar,
+    .nav-row-secondary::-webkit-scrollbar {
       display: none;
+    }
+
+    .nav-row-secondary {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 1px 2px 2px;
+      min-width: 0;
+      flex-wrap: wrap;
     }
 
     .nav-link {
@@ -119,6 +137,127 @@
 
     .nav-link:hover,
     .nav-link:focus-visible {
+      background-color: var(--yellow);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .nav-link.sec-translate { background-color: #E3F3FA; }
+    .nav-link.sec-checklist { background-color: #FDE4DF; }
+
+    .quick-jump-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background-color: var(--green);
+      color: var(--ink);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    }
+
+    .quick-jump-btn:hover,
+    .quick-jump-btn:focus-visible {
+      background-color: var(--yellow);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .quick-jump-btn[aria-expanded="true"] {
+      background-color: var(--yellow);
+    }
+
+    /* 快速導覽景點抽屜 */
+    .quick-jump-drawer {
+      max-width: 820px;
+      margin: 8px auto 0;
+      background-color: var(--card-white);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .quick-jump-drawer[hidden] {
+      display: none;
+    }
+
+    .quick-jump-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .quick-jump-close {
+      background-color: var(--soft-sand);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      padding: 2px 8px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .quick-jump-close:hover {
+      background-color: var(--coral);
+    }
+
+    .quick-jump-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 56vh;
+      overflow-y: auto;
+      padding-right: 2px;
+    }
+
+    .qj-day-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .qj-day-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      opacity: 0.85;
+    }
+
+    .qj-spots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .qj-spot-btn {
+      background-color: var(--paper);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--ink);
+      transition: transform 0.16s ease, background-color 0.16s ease;
+    }
+
+    .qj-spot-btn:hover,
+    .qj-spot-btn:focus-visible {
       background-color: var(--yellow);
       transform: translateY(-2px);
       outline: none;
@@ -154,7 +293,7 @@
 
     .section-block {
       margin-top: 28px;
-      scroll-margin-top: 76px;
+      scroll-margin-top: 108px;
     }
 
     .section-header {
@@ -426,6 +565,13 @@
       border-radius: var(--radius-md);
       padding: 15px 16px;
       box-shadow: var(--shadow-sm);
+      scroll-margin-top: 118px;
+      transition: background-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .stop-card.highlighted {
+      background-color: #FFF4CC;
+      box-shadow: 0 0 0 4px var(--yellow), var(--shadow-hard);
     }
 
     .stop-card::before {
@@ -497,10 +643,10 @@
       transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
     }
 
-    .btn-link.map { background-color: var(--sky); }     /* Google Map 藍色 */
-    .btn-link.web { background-color: var(--yellow); }  /* 官方網站 黃色 */
-    .btn-link.park { background-color: var(--green); }  /* 停車場 綠色 */
-    .btn-link.intro { background-color: var(--coral); } /* 介紹文 紅色 */
+    .btn-link.map { background-color: var(--sky); }
+    .btn-link.web { background-color: var(--yellow); }
+    .btn-link.park { background-color: var(--green); }
+    .btn-link.intro { background-color: var(--coral); }
 
     .btn-link:hover,
     .btn-link:focus-visible {
@@ -977,15 +1123,19 @@
 
     @media (max-width: 600px) {
       .sticky-header {
-        padding: 8px 10px;
+        padding: 7px 10px 8px;
       }
 
       .header-inner {
-        gap: 6px 8px;
+        gap: 6px;
+      }
+
+      .header-row-top {
+        gap: 6px;
       }
 
       .brand-mini {
-        font-size: 0.92rem;
+        font-size: 0.9rem;
         gap: 6px;
       }
 
@@ -997,21 +1147,37 @@
 
       .motion-toggle {
         padding: 3px 9px;
-        font-size: 0.78rem;
+        font-size: 0.76rem;
       }
 
-      .nav-scroll {
-        order: 3;
-        flex: 1 1 100%;
-        width: 100%;
+      .nav-row-primary {
         gap: 5px;
-        padding: 3px 2px 2px;
       }
 
       .nav-link {
         padding: 3px 9px;
         font-size: 0.78rem;
         border-width: 2px;
+      }
+
+      .nav-row-secondary {
+        gap: 5px;
+        flex-wrap: nowrap;
+      }
+
+      .quick-jump-btn {
+        padding: 3px 10px;
+        font-size: 0.78rem;
+        border-width: 2px;
+      }
+
+      .quick-jump-drawer {
+        padding: 10px 11px;
+      }
+
+      .qj-spot-btn {
+        font-size: 0.78rem;
+        padding: 3px 9px;
       }
 
       .countdown-box {
@@ -1154,25 +1320,43 @@
   </style>
 </head>
 <body>
-  <!-- 頂端固定選單 -->
+  <!-- 頂端固定選單（第一排主區塊、第二排快速翻譯／準備清單／快速導覽） -->
   <header class="sticky-header">
     <div class="header-inner">
-      <div class="brand-mini">
-        <span class="brand-dot" aria-hidden="true">🌺</span>
-        <span>2027 沖繩自駕</span>
+      <div class="header-row-top">
+        <div class="brand-mini">
+          <span class="brand-dot" aria-hidden="true">🌺</span>
+          <span>2027 沖繩自駕</span>
+        </div>
+        <button type="button" id="motionToggleBtn" class="motion-toggle" aria-pressed="false">
+          <span>✨ 減少動態</span>
+        </button>
       </div>
-      <nav class="nav-scroll" aria-label="主要區塊導覽">
+
+      <nav class="nav-row-primary" aria-label="主要區塊導覽">
         <a class="nav-link" href="#top">首頁</a>
         <a class="nav-link" href="#flight-car">航班/租車</a>
         <a class="nav-link" href="#itinerary">每日行程</a>
         <a class="nav-link" href="#hotel">住宿</a>
         <a class="nav-link" href="#converter">匯率計算機</a>
-        <a class="nav-link" href="#translator">快速翻譯</a>
-        <a class="nav-link" href="#checklists">準備清單</a>
       </nav>
-      <button type="button" id="motionToggleBtn" class="motion-toggle" aria-pressed="false">
-        <span>✨ 減少動態</span>
-      </button>
+
+      <nav class="nav-row-secondary" aria-label="工具與景點快速導覽">
+        <a class="nav-link sec-translate" href="#translator">🌐 快速翻譯</a>
+        <a class="nav-link sec-checklist" href="#checklists">✅ 準備清單</a>
+        <button type="button" id="quickJumpToggleBtn" class="quick-jump-btn" aria-expanded="false" aria-controls="quickJumpDrawer">
+          <span>🗺️ 快速導覽</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- 快速導覽景點面板（僅收錄各景點，不含航班/租車/住宿） -->
+    <div id="quickJumpDrawer" class="quick-jump-drawer" hidden>
+      <div class="quick-jump-header">
+        <span>📍 點擊景點名稱，自動切換日期並跳至資訊卡</span>
+        <button type="button" id="quickJumpCloseBtn" class="quick-jump-close">✕ 關閉</button>
+      </div>
+      <div id="quickJumpGroups" class="quick-jump-groups"></div>
     </div>
   </header>
 
@@ -1445,7 +1629,7 @@
       return `https://www.google.com/search?q=${encodeURIComponent(keyword)}`;
     }
 
-    // 1. 行程資料（按鈕樣式統一：map=藍色, web=黃色, park=綠色, intro=紅色）
+    // 1. 行程資料（isSpot: true 代表景點/餐飲/購物/停車節點；排除航班、租車、住宿）
     const TRIP_DAYS = [
       {
         id: "day1",
@@ -1454,6 +1638,8 @@
         title: "2027/01/01｜抵達那霸・取車入住",
         stops: [
           {
+            id: "d1-s1",
+            isSpot: false,
             time: "11:40 – 14:15",
             name: "星宇航空 JX870（桃園 TPE → 那霸 OKA）",
             desc: "搭乘星宇航空 JX870 航班前往沖繩那霸，準備展開五天四夜的日系自駕小旅行。",
@@ -1466,6 +1652,8 @@
             ]
           },
           {
+            id: "d1-s2",
+            isSpot: false,
             time: "抵達後",
             name: "OTS 臨空豐崎營業所（那霸機場）",
             desc: "距離那霸機場約 15 分鐘車程的大型租車據點，提供機場接駁服務，辦理取車手續相當順暢。",
@@ -1478,6 +1666,8 @@
             ]
           },
           {
+            id: "d1-s3",
+            isSpot: false,
             time: "傍晚入住",
             name: "HOTEL LANTANA（那霸國際街）",
             desc: "座落於那霸市中心國際通正中央的現代化飯店，下樓即可逛街、品嚐沖繩料理與採買伴手禮，交通與生活機能極佳。",
@@ -1499,6 +1689,8 @@
         title: "2027/01/02｜名護動物園・阿古豬美食・購物",
         stops: [
           {
+            id: "d2-s1",
+            isSpot: true,
             time: "上午",
             name: "Neo Park（名護自然動植物公園）",
             desc: "採用無柵欄自然放養設計的動植物園區，可近距離觀察水豚、紅鶴、巨嘴鳥等動物，還能搭乘可愛的復古小火車遊園。",
@@ -1511,6 +1703,8 @@
             ]
           },
           {
+            id: "d2-s2",
+            isSpot: true,
             time: "午餐",
             name: "百年古家 大家 阿古豬",
             desc: "隱身在名護山林中的百年琉球古民家餐廳，庭園瀑布景致優美，招牌為油花甘甜、入口即化的沖繩頂級「阿古豬」涮涮鍋與沖繩麵。",
@@ -1523,6 +1717,8 @@
             ]
           },
           {
+            id: "d2-s3",
+            isSpot: true,
             time: "午後補給",
             name: "許田休息站美食區 (道の駅許田 フードコート)",
             desc: "沖繩北部人氣最高的公路休息站，集結現炸沙翁（開口笑）、豬肉蛋飯糰、苦瓜漢堡與各式當地名產，適合自駕途中下車補給。",
@@ -1535,6 +1731,8 @@
             ]
           },
           {
+            id: "d2-s4",
+            isSpot: true,
             time: "購物時段",
             name: "PARCO CITY（浦添西海岸購物中心）",
             desc: "緊鄰浦添西海岸的沖繩大型海景購物商場，匯集超過兩百間日系服飾、雜貨與美食餐廳，傍晚還能順道欣賞療癒的夕陽海景。",
@@ -1555,6 +1753,8 @@
         title: "2027/01/03｜美麗海水族館・古宇利島・美國村",
         stops: [
           {
+            id: "d3-s1",
+            isSpot: true,
             time: "上午",
             name: "美麗海水族館 (駐車場 (P7))",
             desc: "沖繩必訪的世界級水族館，擁有壯觀的「黑潮之海」巨型水槽，可近距離欣賞鯨鯊與鬼蝠魟悠游；停靠立體停車場 P7 步行距離最近。",
@@ -1568,6 +1768,8 @@
             ]
           },
           {
+            id: "d3-s2",
+            isSpot: true,
             time: "午餐",
             name: "車老海明蝦廚房(Kurumaebi Kitchen TAMAYA)",
             desc: "位於宜野座村的車海老（斑節蝦）專賣餐廳，使用自家養殖的新鮮活蝦，現點現炸的香酥天婦羅丼飯與鹽烤大蝦鮮甜彈牙。",
@@ -1580,6 +1782,8 @@
             ]
           },
           {
+            id: "d3-s3",
+            isSpot: true,
             time: "下午",
             name: "古宇利海洋塔 (KOURI OCEAN TOWER)",
             desc: "矗立在古宇利島高處的白色展望塔，可搭乘自動駕駛遊園車穿過熱帶花園登塔，將湛藍的「古宇利藍」大海與跨海大橋盡收眼底。",
@@ -1592,6 +1796,8 @@
             ]
           },
           {
+            id: "d3-s4",
+            isSpot: true,
             time: "傍晚停車",
             name: "美國村 (北谷町営駐車場/美浜駐車場)",
             desc: "前往北谷美國村最便利的大型公共停車場，停好車即可輕鬆步行逛遍充滿美式異國風情的彩色建築聚落與海濱步道。",
@@ -1604,6 +1810,8 @@
             ]
           },
           {
+            id: "d3-s5",
+            isSpot: true,
             time: "晚餐",
             name: "グルメ回転寿司市場 美浜店",
             desc: "美國村超人氣的排隊迴轉壽司名店，主打沖繩近海新鮮漁獲與厚切握壽司，選擇豐富且價格實惠，深受當地人與旅客喜愛。",
@@ -1624,6 +1832,8 @@
         title: "2027/01/04｜首里城・漁師食堂・玉泉洞",
         stops: [
           {
+            id: "d4-s1",
+            isSpot: true,
             time: "上午",
             name: "首里城公園 Shurijo Castle Park (駐車場 (P2))",
             desc: "琉球王國昔日的政治與文化中心，可漫步於守禮門與城牆之間感受歷史風華，並近距離見證正殿重建工藝；停放 P2 停車場可快速抵達入口。",
@@ -1637,6 +1847,8 @@
             ]
           },
           {
+            id: "d4-s2",
+            isSpot: true,
             time: "參觀",
             name: "達摩寺（西來院）",
             desc: "位於首里城附近的清幽古剎，以祈求學業、事業與開運的達摩不倒翁聞名，參觀後可挑選可愛的達摩御守留作紀念。",
@@ -1648,6 +1860,8 @@
             ]
           },
           {
+            id: "d4-s3",
+            isSpot: true,
             time: "午餐",
             name: "Ryoshi Shokudo Obanburumai Sakana Daitoryo（漁師食堂 大盤振舞 魚大統領）",
             desc: "由漁協直營的海鮮食堂，以份量豪邁、高 CP 值的生魚片定食、海鮮丼與奶油烤魚聞名，能品嚐到最道地的漁港鮮味。",
@@ -1659,6 +1873,8 @@
             ]
           },
           {
+            id: "d4-s4",
+            isSpot: true,
             time: "下午",
             name: "沖繩世界文化王國・玉泉洞",
             desc: "集結歷經三十萬年歲月形成的壯觀鐘乳石洞「玉泉洞」、琉球古民家聚落與震撼力十足的傳統太鼓舞表演，一次體驗沖繩自然與文化魅力。",
@@ -1679,6 +1895,8 @@
         title: "2027/01/05｜波上宮參拜・海景鬆餅・賦歸",
         stops: [
           {
+            id: "d5-s1",
+            isSpot: true,
             time: "上午",
             name: "波上宮",
             desc: "建在懸崖礁石上、俯瞰大海的「琉球八社」之首，擁有獨特的紅瓦本殿與海景鳥居，也是旅程最後一天祈求平安與購買書包御守的熱門神社。",
@@ -1691,6 +1909,8 @@
             ]
           },
           {
+            id: "d5-s2",
+            isSpot: true,
             time: "下午茶",
             name: "Happy Pancake 幸福鬆餅（瀨長島）",
             desc: "位於白色希臘風海景聚落「瀨長島」的人氣舒芙蕾鬆餅店，口感蓬鬆綿密，邊享用甜點還能邊看無敵海景與飛機起降。",
@@ -1703,6 +1923,8 @@
             ]
           },
           {
+            id: "d5-s3",
+            isSpot: false,
             time: "還車",
             name: "OTS 臨空豐崎營業所（那霸機場）",
             desc: "旅程尾聲在此辦理車輛歸還手續，附近即有加油站方便加滿油還車，完成後可搭乘接駁巴士輕鬆前往那霸機場辦理登機。",
@@ -1715,6 +1937,8 @@
             ]
           },
           {
+            id: "d5-s4",
+            isSpot: false,
             time: "15:25 – 16:10",
             name: "星宇航空 JX871（那霸 OKA → 桃園 TPE）",
             desc: "搭乘星宇航空 JX871 返程，帶著滿滿的沖繩海景與美食回憶平安回家。",
@@ -1730,10 +1954,70 @@
       }
     ];
 
-    // 2. 渲染每日行程
+    // 2. 渲染每日行程與快速導覽景點清單
     const dayTabsEl = document.getElementById("dayTabs");
     const dayPanelContainerEl = document.getElementById("dayPanelContainer");
+    const quickJumpToggleBtn = document.getElementById("quickJumpToggleBtn");
+    const quickJumpDrawer = document.getElementById("quickJumpDrawer");
+    const quickJumpCloseBtn = document.getElementById("quickJumpCloseBtn");
+    const quickJumpGroupsEl = document.getElementById("quickJumpGroups");
     let activeDayIdx = 0;
+    let highlightTimer = null;
+
+    function setQuickJumpOpen(open) {
+      quickJumpDrawer.hidden = !open;
+      quickJumpToggleBtn.setAttribute("aria-expanded", String(open));
+    }
+
+    quickJumpToggleBtn.addEventListener("click", () => {
+      setQuickJumpOpen(quickJumpDrawer.hidden);
+    });
+
+    quickJumpCloseBtn.addEventListener("click", () => {
+      setQuickJumpOpen(false);
+    });
+
+    function renderQuickJumpSpots() {
+      const groupsHtml = TRIP_DAYS.map((day, dIdx) => {
+        const spots = day.stops.filter(st => st.isSpot);
+        if (!spots.length) return "";
+        const btnsHtml = spots.map(st =>
+          `<button type="button" class="qj-spot-btn" onclick="jumpToSpot(${dIdx}, '${st.id}')">${escapeHtml(st.name)}</button>`
+        ).join("");
+        return `
+          <div class="qj-day-group">
+            <div class="qj-day-label">${day.tabLabel}（${day.subLabel}）</div>
+            <div class="qj-spots">${btnsHtml}</div>
+          </div>
+        `;
+      }).join("");
+      quickJumpGroupsEl.innerHTML = groupsHtml;
+    }
+
+    window.jumpToSpot = function(dayIdx, stopId) {
+      setQuickJumpOpen(false);
+      activeDayIdx = dayIdx;
+      renderDayTabs();
+      renderDayPanel(false);
+
+      requestAnimationFrame(() => {
+        const targetCard = document.getElementById("stop-" + stopId);
+        if (!targetCard) return;
+
+        const reduced = document.body.classList.contains("reduced-motion");
+        targetCard.scrollIntoView({
+          behavior: reduced ? "auto" : "smooth",
+          block: "start"
+        });
+
+        document.querySelectorAll(".stop-card.highlighted").forEach(el => el.classList.remove("highlighted"));
+        targetCard.classList.add("highlighted");
+        clearTimeout(highlightTimer);
+        highlightTimer = setTimeout(() => {
+          targetCard.classList.remove("highlighted");
+        }, 1800);
+      });
+    };
 
     function switchToDay(idx, scrollToTop = false) {
       if (idx < 0 || idx >= TRIP_DAYS.length) return;
@@ -1769,7 +2053,7 @@
         ).join("");
 
         return `
-          <article class="stop-card">
+          <article class="stop-card" id="stop-${stop.id}">
             <div class="stop-top">
               <strong>🕒 ${stop.time}</strong>
             </div>
@@ -1806,6 +2090,7 @@
       `;
     }
 
+    renderQuickJumpSpots();
     renderDayTabs();
     renderDayPanel(false);
 
