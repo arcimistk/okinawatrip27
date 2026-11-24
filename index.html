@@ -124,10 +124,10 @@
     .nav-link {
       text-decoration: none;
       color: var(--ink);
-      background-color: var(--card-white);
+      background-color: var(--soft-sand);
       border: 2.5px solid var(--ink);
       border-radius: 999px;
-      padding: 4px 11px;
+      padding: 4px 12px;
       font-size: 0.85rem;
       white-space: nowrap;
       flex-shrink: 0;
@@ -142,21 +142,17 @@
       outline: none;
     }
 
-    .nav-link.sec-translate { background-color: #E3F3FA; }
-    .nav-link.sec-checklist { background-color: #FDE4DF; }
-
     .quick-jump-btn {
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      background-color: var(--green);
+      background-color: var(--soft-sand);
       color: var(--ink);
       border: 2.5px solid var(--ink);
       border-radius: 999px;
       padding: 4px 12px;
       font-family: inherit;
       font-size: 0.85rem;
-      font-weight: 700;
       white-space: nowrap;
       flex-shrink: 0;
       cursor: pointer;
@@ -1155,7 +1151,7 @@
       }
 
       .nav-link {
-        padding: 3px 9px;
+        padding: 3px 10px;
         font-size: 0.78rem;
         border-width: 2px;
       }
@@ -1320,7 +1316,7 @@
   </style>
 </head>
 <body>
-  <!-- 頂端固定選單（第一排主區塊、第二排快速翻譯／準備清單／快速導覽） -->
+  <!-- 頂端固定選單（第一排：首頁、航班/租車、住宿、每日行程、準備清單；第二排：快速翻譯、匯率計算機、快速導覽） -->
   <header class="sticky-header">
     <div class="header-inner">
       <div class="header-row-top">
@@ -1329,23 +1325,23 @@
           <span>2027 沖繩自駕</span>
         </div>
         <button type="button" id="motionToggleBtn" class="motion-toggle" aria-pressed="false">
-          <span>✨ 減少動態</span>
+          <span>減少動態</span>
         </button>
       </div>
 
       <nav class="nav-row-primary" aria-label="主要區塊導覽">
         <a class="nav-link" href="#top">首頁</a>
         <a class="nav-link" href="#flight-car">航班/租車</a>
-        <a class="nav-link" href="#itinerary">每日行程</a>
         <a class="nav-link" href="#hotel">住宿</a>
-        <a class="nav-link" href="#converter">匯率計算機</a>
+        <a class="nav-link" href="#itinerary">每日行程</a>
+        <a class="nav-link" href="#checklists">準備清單</a>
       </nav>
 
       <nav class="nav-row-secondary" aria-label="工具與景點快速導覽">
-        <a class="nav-link sec-translate" href="#translator">🌐 快速翻譯</a>
-        <a class="nav-link sec-checklist" href="#checklists">✅ 準備清單</a>
+        <a class="nav-link" href="#translator">快速翻譯</a>
+        <a class="nav-link" href="#converter">匯率計算機</a>
         <button type="button" id="quickJumpToggleBtn" class="quick-jump-btn" aria-expanded="false" aria-controls="quickJumpDrawer">
-          <span>🗺️ 快速導覽</span>
+          <span>快速導覽</span>
         </button>
       </nav>
     </div>
@@ -1353,8 +1349,8 @@
     <!-- 快速導覽景點面板（僅收錄各景點，不含航班/租車/住宿） -->
     <div id="quickJumpDrawer" class="quick-jump-drawer" hidden>
       <div class="quick-jump-header">
-        <span>📍 點擊景點名稱，自動切換日期並跳至資訊卡</span>
-        <button type="button" id="quickJumpCloseBtn" class="quick-jump-close">✕ 關閉</button>
+        <span>點擊景點名稱，自動切換日期並跳至資訊卡</span>
+        <button type="button" id="quickJumpCloseBtn" class="quick-jump-close">關閉</button>
       </div>
       <div id="quickJumpGroups" class="quick-jump-groups"></div>
     </div>
@@ -1419,7 +1415,7 @@
         </svg>
       </div>
 
-      <span class="hero-badge">🚗 沖繩 5 天 4 夜自駕繪本手帳</span>
+      <span class="hero-badge">沖繩 5 天 4 夜自駕繪本手帳</span>
       <h1 class="hero-title">2027 沖繩新年自駕之旅</h1>
       <p class="hero-dates">2027/01/01（五）– 2027/01/05（二）｜星宇航空 JX870 / JX871・OTS 租車</p>
 
@@ -1447,14 +1443,14 @@
     <!-- 航班與租車卡片 -->
     <section class="section-block" id="flight-car">
       <div class="section-header">
-        <h2 class="section-title sky">✈️ 航班與租車資訊</h2>
+        <h2 class="section-title sky">航班與租車資訊</h2>
       </div>
       <div class="flight-grid">
         <article class="flight-card">
           <span class="flight-tag out">去程航班・2027/01/01</span>
           <div class="flight-route">
             <span>桃園 TPE</span>
-            <span>✈️ JX870</span>
+            <span>JX870</span>
             <span>那霸 OKA</span>
           </div>
           <p class="flight-meta"><strong>表定時間：</strong>11:40 – 14:15</p>
@@ -1465,7 +1461,7 @@
           <span class="flight-tag back">回程航班・2027/01/05</span>
           <div class="flight-route">
             <span>那霸 OKA</span>
-            <span>✈️ JX871</span>
+            <span>JX871</span>
             <span>桃園 TPE</span>
           </div>
           <p class="flight-meta"><strong>表定時間：</strong>15:25 – 16:10</p>
@@ -1475,7 +1471,7 @@
         <article class="flight-card">
           <span class="flight-tag car">自駕租車・取還據點</span>
           <div class="flight-route">
-            <span>🚗 OTS 臨空豐崎營業所</span>
+            <span>OTS 臨空豐崎營業所</span>
           </div>
           <p class="flight-meta"><strong>取車日：</strong>2027/01/01 抵達後前往</p>
           <p class="flight-meta"><strong>還車日：</strong>2027/01/05 搭機前歸還</p>
@@ -1483,49 +1479,96 @@
       </div>
     </section>
 
-    <!-- 每日行程 -->
-    <section class="section-block" id="itinerary">
-      <div class="section-header">
-        <h2 class="section-title">🗓️ 每日行程時間軸</h2>
-      </div>
-
-      <div class="day-tabs" id="dayTabs" role="tablist" aria-label="選擇行程日期"></div>
-      <div id="dayPanelContainer"></div>
-    </section>
-
     <!-- 住宿資訊 -->
     <section class="section-block" id="hotel">
       <div class="section-header">
-        <h2 class="section-title coral">🏨 住宿資訊</h2>
+        <h2 class="section-title coral">住宿資訊</h2>
       </div>
       <article class="card">
         <h3 style="margin: 0 0 6px; font-size: 1.25rem;">HOTEL LANTANA（那霸國際街）</h3>
         <p style="margin: 0 0 8px;">入住期間：2027/01/01 – 2027/01/05（依行程表住宿安排）</p>
         <p style="margin: 0;">座落於那霸市中心國際通周邊，晚上逛街、吃消夜與採買伴手禮都很方便。</p>
         <div class="hotel-box">
-          <div><strong>📍 地址關鍵字：</strong>HOTEL LANTANA 那霸國際街</div>
+          <div><strong>地址關鍵字：</strong>HOTEL LANTANA 那霸國際街</div>
           <div class="hotel-actions">
-            <a class="btn-link map" href="https://www.google.com/maps/search/?api=1&query=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97" target="_blank" rel="noopener noreferrer">📍 Google 地圖</a>
-            <a class="btn-link web" href="https://lantana-kokusai.com" target="_blank" rel="noopener noreferrer">🌐 官方網站</a>
-            <a class="btn-link intro" href="https://www.google.com/search?q=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97+%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener noreferrer">📖 介紹文</a>
-            <a class="btn-link intro" href="https://www.google.com/search?q=%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97+%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener noreferrer">📖 那霸國際街介紹</a>
-            <button type="button" class="btn-mini" onclick="copyText('HOTEL LANTANA（那霸國際街）')">📋 複製飯店名稱</button>
+            <a class="btn-link map" href="https://www.google.com/maps/search/?api=1&query=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97" target="_blank" rel="noopener noreferrer">Google 地圖</a>
+            <a class="btn-link web" href="https://lantana-kokusai.com" target="_blank" rel="noopener noreferrer">官方網站</a>
+            <a class="btn-link intro" href="https://www.google.com/search?q=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97+%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener noreferrer">介紹文</a>
+            <a class="btn-link intro" href="https://www.google.com/search?q=%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97+%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener noreferrer">那霸國際街介紹</a>
+            <button type="button" class="btn-mini" onclick="copyText('HOTEL LANTANA（那霸國際街）')">複製飯店名稱</button>
           </div>
         </div>
       </article>
     </section>
 
+    <!-- 每日行程 -->
+    <section class="section-block" id="itinerary">
+      <div class="section-header">
+        <h2 class="section-title">每日行程時間軸</h2>
+      </div>
+
+      <div class="day-tabs" id="dayTabs" role="tablist" aria-label="選擇行程日期"></div>
+      <div id="dayPanelContainer"></div>
+    </section>
+
+    <!-- 可打勾清單：待辦清單 / 出發前清單 / 行李清單 -->
+    <section class="section-block" id="checklists">
+      <div class="section-header">
+        <h2 class="section-title coral">旅遊準備清單</h2>
+      </div>
+      <div class="card">
+        <div class="list-tabs" role="tablist" aria-label="切換清單類別">
+          <button type="button" class="list-tab active" data-list="todo">待辦清單</button>
+          <button type="button" class="list-tab" data-list="before">出發前清單</button>
+          <button type="button" class="list-tab" data-list="packing">行李清單</button>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 0.88rem; margin-bottom: 6px;">
+          <span id="listProgressText">已完成 0 / 0 項</span>
+          <button type="button" id="resetCurrentListBtn" class="btn-mini">還原此清單預設</button>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="listProgressFill"></div>
+        </div>
+
+        <form class="add-item-row" id="addItemForm">
+          <input type="text" id="newItemInput" class="add-item-input" placeholder="新增清單項目，例如：買鳳梨酥、帶太陽眼鏡..." required />
+          <button type="submit" class="btn-action green">+ 新增</button>
+        </form>
+
+        <ul class="check-items" id="checklistItems"></ul>
+      </div>
+    </section>
+
+    <!-- 快速翻譯（Google 翻譯） -->
+    <section class="section-block" id="translator">
+      <div class="section-header">
+        <h2 class="section-title sky">快速翻譯</h2>
+      </div>
+      <div class="card">
+        <label for="customTranslateText"><strong>輸入想翻譯的中文或日文：</strong></label>
+        <textarea id="customTranslateText" class="custom-textarea" placeholder="在此輸入想翻譯的句子，點選下方「Google 翻譯」會直接帶入文字並另開新分頁..."></textarea>
+        <div class="translate-actions">
+          <div class="translate-left-group">
+            <button type="button" id="copyCustomBtn" class="btn-action soft">複製文字</button>
+            <button type="button" id="clearCustomBtn" class="btn-action coral">清除文字</button>
+          </div>
+          <a id="openGoogleTranslate" class="btn-link map" href="https://translate.google.com/?sl=auto&tl=ja&op=translate" target="_blank" rel="noopener noreferrer">Google 翻譯</a>
+        </div>
+      </div>
+    </section>
+
     <!-- 匯率與加減乘除百分比計算機 -->
     <section class="section-block" id="converter">
       <div class="section-header">
-        <h2 class="section-title green">💴 日幣 ↔ 台幣匯率計算機</h2>
+        <h2 class="section-title green">日幣 ↔ 台幣匯率計算機</h2>
       </div>
       <div class="card">
         <div class="rate-bar">
           <div class="rate-control-group">
             <label for="customRateInput"><strong>自訂匯率（1 JPY = ? TWD）：</strong></label>
             <input type="number" id="customRateInput" class="rate-input-inline" min="0.0001" step="0.0001" value="0.21" />
-            <button type="button" id="resetRateBtn" class="btn-mini">↺ 重設 (0.21)</button>
+            <button type="button" id="resetRateBtn" class="btn-mini">重設 (0.21)</button>
           </div>
           <div class="dir-toggle-group" role="group" aria-label="切換換算方向">
             <button type="button" class="dir-btn active" id="dirJpyToTwdBtn">日幣 → 台幣</button>
@@ -1569,53 +1612,6 @@
         </div>
       </div>
     </section>
-
-    <!-- 快速翻譯（Google 翻譯） -->
-    <section class="section-block" id="translator">
-      <div class="section-header">
-        <h2 class="section-title sky">🌐 快速翻譯</h2>
-      </div>
-      <div class="card">
-        <label for="customTranslateText"><strong>✍️ 輸入想翻譯的中文或日文：</strong></label>
-        <textarea id="customTranslateText" class="custom-textarea" placeholder="在此輸入想翻譯的句子，點選下方「Google 翻譯」會直接帶入文字並另開新分頁..."></textarea>
-        <div class="translate-actions">
-          <div class="translate-left-group">
-            <button type="button" id="copyCustomBtn" class="btn-action soft">📋 複製文字</button>
-            <button type="button" id="clearCustomBtn" class="btn-action coral">🗑️ 清除文字</button>
-          </div>
-          <a id="openGoogleTranslate" class="btn-link map" href="https://translate.google.com/?sl=auto&tl=ja&op=translate" target="_blank" rel="noopener noreferrer">🌐 Google 翻譯</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 可打勾清單：待辦清單 / 出發前清單 / 行李清單 -->
-    <section class="section-block" id="checklists">
-      <div class="section-header">
-        <h2 class="section-title coral">✅ 旅遊準備清單</h2>
-      </div>
-      <div class="card">
-        <div class="list-tabs" role="tablist" aria-label="切換清單類別">
-          <button type="button" class="list-tab active" data-list="todo">📝 待辦清單</button>
-          <button type="button" class="list-tab" data-list="before">🗓️ 出發前清單</button>
-          <button type="button" class="list-tab" data-list="packing">🧳 行李清單</button>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 0.88rem; margin-bottom: 6px;">
-          <span id="listProgressText">已完成 0 / 0 項</span>
-          <button type="button" id="resetCurrentListBtn" class="btn-mini">↺ 還原此清單預設</button>
-        </div>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar-fill" id="listProgressFill"></div>
-        </div>
-
-        <form class="add-item-row" id="addItemForm">
-          <input type="text" id="newItemInput" class="add-item-input" placeholder="新增清單項目，例如：買鳳梨酥、帶太陽眼鏡..." required />
-          <button type="submit" class="btn-action green">＋ 新增</button>
-        </form>
-
-        <ul class="check-items" id="checklistItems"></ul>
-      </div>
-    </section>
   </main>
 
   <!-- 右下角回到最上方按鈕 -->
@@ -1643,12 +1639,12 @@
             time: "11:40 – 14:15",
             name: "星宇航空 JX870（桃園 TPE → 那霸 OKA）",
             desc: "搭乘星宇航空 JX870 航班前往沖繩那霸，準備展開五天四夜的日系自駕小旅行。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Naha+Airport",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("星宇航空 JX870 沖繩 搭乘體驗 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.starlux-airlines.com/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("星宇航空 JX870 沖繩 搭乘體驗 介紹") }
             ]
           },
           {
@@ -1657,12 +1653,12 @@
             time: "抵達後",
             name: "OTS 臨空豐崎營業所（那霸機場）",
             desc: "距離那霸機場約 15 分鐘車程的大型租車據點，提供機場接駁服務，辦理取車手續相當順暢。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=OTS+%E8%87%A8%E7%A9%BA%E8%B1%90%E5%B4%8E%E7%87%9F%E6%A5%AD%E6%89%80",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 OTS 臨空豐崎營業所 租車 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 OTS 臨空豐崎營業所 租車 介紹") }
             ]
           },
           {
@@ -1671,13 +1667,13 @@
             time: "傍晚入住",
             name: "HOTEL LANTANA（那霸國際街）",
             desc: "座落於那霸市中心國際通正中央的現代化飯店，下樓即可逛街、品嚐沖繩料理與採買伴手禮，交通與生活機能極佳。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=HOTEL+LANTANA+%E9%82%A3%E9%9C%B8%E5%9C%8B%E9%9A%9B%E8%A1%97",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://lantana-kokusai.com" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("HOTEL LANTANA 那霸國際街 住宿 介紹") },
-              { label: "📖 那霸國際街介紹", cls: "intro", url: buildGoogleSearchUrl("那霸國際街 逛街 美食 介紹") }
+              { label: "官方網站", cls: "web", url: "https://lantana-kokusai.com" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("HOTEL LANTANA 那霸國際街 住宿 介紹") },
+              { label: "那霸國際街介紹", cls: "intro", url: buildGoogleSearchUrl("那霸國際街 逛街 美食 介紹") }
             ]
           }
         ]
@@ -1694,12 +1690,12 @@
             time: "上午",
             name: "Neo Park（名護自然動植物公園）",
             desc: "採用無柵欄自然放養設計的動植物園區，可近距離觀察水豚、紅鶴、巨嘴鳥等動物，還能搭乘可愛的復古小火車遊園。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Neo+Park+Okinawa",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.neopark.co.jp/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 Neo Park 名護自然動植物公園 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.neopark.co.jp/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 Neo Park 名護自然動植物公園 介紹") }
             ]
           },
           {
@@ -1708,12 +1704,12 @@
             time: "午餐",
             name: "百年古家 大家 阿古豬",
             desc: "隱身在名護山林中的百年琉球古民家餐廳，庭園瀑布景致優美，招牌為油花甘甜、入口即化的沖繩頂級「阿古豬」涮涮鍋與沖繩麵。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%99%BE%E5%B9%B4%E5%8F%A4%E5%AE%B6+%E5%A4%A7%E5%AE%B6",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://ufuya.com/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 百年古家 大家 阿古豬 食記 介紹") }
+              { label: "官方網站", cls: "web", url: "https://ufuya.com/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 百年古家 大家 阿古豬 食記 介紹") }
             ]
           },
           {
@@ -1722,12 +1718,12 @@
             time: "午後補給",
             name: "許田休息站美食區 (道の駅許田 フードコート)",
             desc: "沖繩北部人氣最高的公路休息站，集結現炸沙翁（開口笑）、豬肉蛋飯糰、苦瓜漢堡與各式當地名產，適合自駕途中下車補給。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://maps.app.goo.gl/9pamaDhrrivYp3aY6?g_st=il",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.yanbaru-b.co.jp/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 許田休息站美食區 道の駅許田 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.yanbaru-b.co.jp/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 許田休息站美食區 道の駅許田 介紹") }
             ]
           },
           {
@@ -1736,12 +1732,12 @@
             time: "購物時段",
             name: "PARCO CITY（浦添西海岸購物中心）",
             desc: "緊鄰浦添西海岸的沖繩大型海景購物商場，匯集超過兩百間日系服飾、雜貨與美食餐廳，傍晚還能順道欣賞療癒的夕陽海景。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=SAN-A+Urasoe+West+Coast+PARCO+CITY",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.parcocity.jp/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 PARCO CITY 浦添西海岸購物中心 逛街 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.parcocity.jp/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 PARCO CITY 浦添西海岸購物中心 逛街 介紹") }
             ]
           }
         ]
@@ -1758,13 +1754,13 @@
             time: "上午",
             name: "美麗海水族館 (駐車場 (P7))",
             desc: "沖繩必訪的世界級水族館，擁有壯觀的「黑潮之海」巨型水槽，可近距離欣賞鯨鯊與鬼蝠魟悠游；停靠立體停車場 P7 步行距離最近。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E3%82%89%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8+P7",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://churaumi.okinawa/" },
-              { label: "🅿️ 駐車場 (P7)", cls: "park", url: "https://oki-park.jp/kaiyohaku/acc/88" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 美麗海水族館 P7停車場 攻略 介紹") }
+              { label: "官方網站", cls: "web", url: "https://churaumi.okinawa/" },
+              { label: "駐車場 (P7)", cls: "park", url: "https://oki-park.jp/kaiyohaku/acc/88" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 美麗海水族館 P7停車場 攻略 介紹") }
             ]
           },
           {
@@ -1773,12 +1769,12 @@
             time: "午餐",
             name: "車老海明蝦廚房(Kurumaebi Kitchen TAMAYA)",
             desc: "位於宜野座村的車海老（斑節蝦）專賣餐廳，使用自家養殖的新鮮活蝦，現點現炸的香酥天婦羅丼飯與鹽烤大蝦鮮甜彈牙。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Kurumaebi+Kitchen+TAMAYA",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://tamayaab.com/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 車老海明蝦廚房 Kurumaebi Kitchen TAMAYA 食記 介紹") }
+              { label: "官方網站", cls: "web", url: "https://tamayaab.com/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 車老海明蝦廚房 Kurumaebi Kitchen TAMAYA 食記 介紹") }
             ]
           },
           {
@@ -1787,12 +1783,12 @@
             time: "下午",
             name: "古宇利海洋塔 (KOURI OCEAN TOWER)",
             desc: "矗立在古宇利島高處的白色展望塔，可搭乘自動駕駛遊園車穿過熱帶花園登塔，將湛藍的「古宇利藍」大海與跨海大橋盡收眼底。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E5%8F%A4%E5%AE%87%E5%88%A9%E6%B5%B7%E6%B4%8B%E5%A1%94",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.kouri-oceantower.com/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 古宇利海洋塔 KOURI OCEAN TOWER 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.kouri-oceantower.com/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 古宇利海洋塔 KOURI OCEAN TOWER 介紹") }
             ]
           },
           {
@@ -1801,12 +1797,12 @@
             time: "傍晚停車",
             name: "美國村 (北谷町営駐車場/美浜駐車場)",
             desc: "前往北谷美國村最便利的大型公共停車場，停好車即可輕鬆步行逛遍充滿美式異國風情的彩色建築聚落與海濱步道。",
-            mapLabel: "🅿️ 駐車場",
+            mapLabel: "駐車場",
             mapCls: "park",
             mapUrl: "https://maps.app.goo.gl/xVT9ZfApitsKEvrV8?g_st=il",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.okinawa-americanvillage.com/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 美國村 北谷町營停車場 逛街 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.okinawa-americanvillage.com/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 美國村 北谷町營停車場 逛街 介紹") }
             ]
           },
           {
@@ -1815,12 +1811,12 @@
             time: "晚餐",
             name: "グルメ回転寿司市場 美浜店",
             desc: "美國村超人氣的排隊迴轉壽司名店，主打沖繩近海新鮮漁獲與厚切握壽司，選擇豐富且價格實惠，深受當地人與旅客喜愛。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E3%82%B0%E3%83%AB%E3%83%A1%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%E5%B8%82%E5%A0%B4+%E7%BE%8E%E6%B5%9C%E5%BA%97",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "http://gurumekaiten.com/#tempo" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 グルメ回転寿司市場 美浜店 美國村迴轉壽司 介紹") }
+              { label: "官方網站", cls: "web", url: "http://gurumekaiten.com/#tempo" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 グルメ回転寿司市場 美浜店 美國村迴轉壽司 介紹") }
             ]
           }
         ]
@@ -1837,13 +1833,13 @@
             time: "上午",
             name: "首里城公園 Shurijo Castle Park (駐車場 (P2))",
             desc: "琉球王國昔日的政治與文化中心，可漫步於守禮門與城牆之間感受歷史風華，並近距離見證正殿重建工藝；停放 P2 停車場可快速抵達入口。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://maps.app.goo.gl/BwskUCNuGKx2FUWa8",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://oki-park.jp/shurijo/" },
-              { label: "🅿️ 駐車場 (P2)", cls: "park", url: "https://www.google.com/maps?cid=16951007728708356968" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 首里城公園 守禮門 介紹") }
+              { label: "官方網站", cls: "web", url: "https://oki-park.jp/shurijo/" },
+              { label: "駐車場 (P2)", cls: "park", url: "https://www.google.com/maps?cid=16951007728708356968" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 首里城公園 守禮門 介紹") }
             ]
           },
           {
@@ -1852,11 +1848,11 @@
             time: "參觀",
             name: "達摩寺（西來院）",
             desc: "位於首里城附近的清幽古剎，以祈求學業、事業與開運的達摩不倒翁聞名，參觀後可挑選可愛的達摩御守留作紀念。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E9%81%94%E7%A3%A8%E5%AF%BA+%E9%82%A3%E9%9C%B8",
             links: [
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 達摩寺 西來院 那霸 介紹") }
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 達摩寺 西來院 那霸 介紹") }
             ]
           },
           {
@@ -1865,11 +1861,11 @@
             time: "午餐",
             name: "Ryoshi Shokudo Obanburumai Sakana Daitoryo（漁師食堂 大盤振舞 魚大統領）",
             desc: "由漁協直營的海鮮食堂，以份量豪邁、高 CP 值的生魚片定食、海鮮丼與奶油烤魚聞名，能品嚐到最道地的漁港鮮味。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://maps.app.goo.gl/9ra5wfdNKHwrxyKW9",
             links: [
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 漁師食堂 大盤振舞 魚大統領 食記 介紹") }
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 漁師食堂 大盤振舞 魚大統領 食記 介紹") }
             ]
           },
           {
@@ -1878,12 +1874,12 @@
             time: "下午",
             name: "沖繩世界文化王國・玉泉洞",
             desc: "集結歷經三十萬年歲月形成的壯觀鐘乳石洞「玉泉洞」、琉球古民家聚落與震撼力十足的傳統太鼓舞表演，一次體驗沖繩自然與文化魅力。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B8%84%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89+%E7%8E%89%E6%B3%89%E6%B4%9E",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.gyokusendo.co.jp/okinawaworld/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩世界文化王國 玉泉洞 太鼓舞 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.gyokusendo.co.jp/okinawaworld/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩世界文化王國 玉泉洞 太鼓舞 介紹") }
             ]
           }
         ]
@@ -1900,12 +1896,12 @@
             time: "上午",
             name: "波上宮",
             desc: "建在懸崖礁石上、俯瞰大海的「琉球八社」之首，擁有獨特的紅瓦本殿與海景鳥居，也是旅程最後一天祈求平安與購買書包御守的熱門神社。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E4%B8%8A%E5%AE%AE",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://naminouegu.jp/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 波上宮 御守 參拜 介紹") }
+              { label: "官方網站", cls: "web", url: "https://naminouegu.jp/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 波上宮 御守 參拜 介紹") }
             ]
           },
           {
@@ -1914,12 +1910,12 @@
             time: "下午茶",
             name: "Happy Pancake 幸福鬆餅（瀨長島）",
             desc: "位於白色希臘風海景聚落「瀨長島」的人氣舒芙蕾鬆餅店，口感蓬鬆綿密，邊享用甜點還能邊看無敵海景與飛機起降。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%81%82%E3%82%8F%E3%81%9B%E3%81%AE%E3%83%91%E3%83%B3%E3%82%B1%E3%83%BC%E3%82%AD+%E7%80%AC%E9%95%B7%E5%B3%B6",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://magia.tokyo/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 瀨長島 Happy Pancake 幸福鬆餅 介紹") }
+              { label: "官方網站", cls: "web", url: "https://magia.tokyo/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 瀨長島 Happy Pancake 幸福鬆餅 介紹") }
             ]
           },
           {
@@ -1928,12 +1924,12 @@
             time: "還車",
             name: "OTS 臨空豐崎營業所（那霸機場）",
             desc: "旅程尾聲在此辦理車輛歸還手續，附近即有加油站方便加滿油還車，完成後可搭乘接駁巴士輕鬆前往那霸機場辦理登機。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=OTS+%E8%87%A8%E7%A9%BA%E8%B1%90%E5%B4%8E%E7%87%9F%E6%A5%AD%E6%89%80",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 OTS 臨空豐崎營業所 還車 加油 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.otsinternational.jp/otsrentacar/okinawa/office/toyosaki/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("沖繩 OTS 臨空豐崎營業所 還車 加油 介紹") }
             ]
           },
           {
@@ -1942,12 +1938,12 @@
             time: "15:25 – 16:10",
             name: "星宇航空 JX871（那霸 OKA → 桃園 TPE）",
             desc: "搭乘星宇航空 JX871 返程，帶著滿滿的沖繩海景與美食回憶平安回家。",
-            mapLabel: "📍 Google 地圖",
+            mapLabel: "Google 地圖",
             mapCls: "map",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Naha+Airport",
             links: [
-              { label: "🌐 官方網站", cls: "web", url: "https://www.starlux-airlines.com/" },
-              { label: "📖 介紹文", cls: "intro", url: buildGoogleSearchUrl("那霸機場 伴手禮 免稅店 星宇航空 JX871 介紹") }
+              { label: "官方網站", cls: "web", url: "https://www.starlux-airlines.com/" },
+              { label: "介紹文", cls: "intro", url: buildGoogleSearchUrl("那霸機場 伴手禮 免稅店 星宇航空 JX871 介紹") }
             ]
           }
         ]
@@ -2055,12 +2051,12 @@
         return `
           <article class="stop-card" id="stop-${stop.id}">
             <div class="stop-top">
-              <strong>🕒 ${stop.time}</strong>
+              <strong>${stop.time}</strong>
             </div>
             <h4 class="stop-title">${stop.name}</h4>
             <p class="stop-desc">${stop.desc}</p>
             <div class="stop-actions">
-              <a class="btn-link ${stop.mapCls || "map"}" href="${stop.mapUrl}" target="_blank" rel="noopener noreferrer">${stop.mapLabel || "📍 Google 地圖"}</a>
+              <a class="btn-link ${stop.mapCls || "map"}" href="${stop.mapUrl}" target="_blank" rel="noopener noreferrer">${stop.mapLabel || "Google 地圖"}</a>
               ${extraBtns}
             </div>
           </article>
@@ -2109,7 +2105,7 @@
         cdHours.textContent = "00";
         cdMins.textContent = "00";
         cdSecs.textContent = "00";
-        cdStatus.textContent = "✈️ 已抵達出發時間（2027/01/01 11:40），祝沖繩自駕旅途愉快！";
+        cdStatus.textContent = "已抵達出發時間（2027/01/01 11:40），祝沖繩自駕旅途愉快！";
         return;
       }
       const totalSec = Math.floor(diff / 1000);
@@ -2481,7 +2477,7 @@
     function applyReducedMotion(enabled) {
       document.body.classList.toggle("reduced-motion", enabled);
       motionToggleBtn.setAttribute("aria-pressed", String(enabled));
-      motionToggleBtn.innerHTML = enabled ? "<span>🌿 已減少動態</span>" : "<span>✨ 減少動態</span>";
+      motionToggleBtn.innerHTML = enabled ? "<span>已減少動態</span>" : "<span>減少動態</span>";
       localStorage.setItem(MOTION_KEY, String(enabled));
     }
 
